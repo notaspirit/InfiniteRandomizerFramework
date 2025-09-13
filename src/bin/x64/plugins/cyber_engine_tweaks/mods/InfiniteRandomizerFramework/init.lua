@@ -79,7 +79,7 @@ registerForEvent('onHook', function()
                         goto continueNodes
                     end
 
-                    logger.info("Replacing " .. resPath .. "(" .. node.mesh.appearance:ToString() .. ") with " .. cat[randomIndex].resourcePath .. "(" .. cat[randomIndex].appearance .. ")")
+                    -- logger.info("Replacing " .. resPath .. " with " .. cat[randomIndex].resourcePath .. " (" .. cat[randomIndex].appearance .. ")")
                     node.mesh = cat[randomIndex].resourcePath
                     node.meshAppearance = cat[randomIndex].appearance
                     ::continueNodes::
