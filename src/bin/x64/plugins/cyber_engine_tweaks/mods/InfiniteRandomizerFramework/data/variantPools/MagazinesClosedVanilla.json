@@ -1,0 +1,47 @@
+{
+    "name": "MagazinesClosedVanilla",
+    "enabled": true,
+    "category": "MagazinesClosed",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i.mesh",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j.mesh",
+            "weight": 1
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "MagazinesClosed",
+    "resourcePaths": [
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i.mesh",
+        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j.mesh"
+    ]
+}
