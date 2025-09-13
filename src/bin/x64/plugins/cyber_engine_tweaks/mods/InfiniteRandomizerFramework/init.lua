@@ -63,13 +63,20 @@ registerForEvent('onHook', function()
                             break
                         end
                     end
+                
+                    if (not ResRef.FromString(cat[randomIndex].resourcePath):IsValid()) then
+                        print("[WARNING] Skipping invalid resource path: " .. tostring(cat[randomIndex].resourcePath))
+                        goto continueNodes
+                    end
 
                     -- add check to make sure the mesh path exists and the resource is valid to avoid crashes, if it isn't regamble with an attempt limit to avoid infinite loops
                     print("Random Index: " .. tostring(randomIndex))
-                    print("Replacing " .. resPath .. " with " .. cat[randomIndex].resourcePath)
-
+                    print(cat[randomIndex].resourcePath)
+                    print(cat[randomIndex].appearance)
                     -- print("Old " .. ResRef.FromHash(node.mesh.hash):ToString())
                     node.mesh = cat[randomIndex].resourcePath
+                    node.meshAppearance = cat[randomIndex].appearance
+                    
                     -- print("New " .. ResRef.FromHash(node.mesh.hash):ToString())
                     ::continueNodes::
                 end

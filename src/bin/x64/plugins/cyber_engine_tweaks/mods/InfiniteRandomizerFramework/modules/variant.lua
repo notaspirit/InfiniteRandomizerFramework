@@ -3,11 +3,12 @@
 ---@field weight number
 local variant = {}
 
-function variant:new()
+function variant:new(resourcePath, appearance, weight)
     local obj = {}
 
-    obj.resourcePath = nil
-    obj.weight = 1
+    obj.resourcePath = resourcePath
+    obj.appearance = appearance or "default"
+    obj.weight = weight or 1
 
     setmetatable(obj, self)
     self.__index = self

@@ -2,6 +2,7 @@ local jsonUtils = require("modules/jsonUtils")
 local category = require("modules/category")
 local utils = require("modules/utils")
 local variantPool = require("modules/variantPool")
+local variant = require("modules/variant")
 
 local categoriesDir = "data/categories/"
 local variantPoolsDir = "data/variantPools/"
@@ -109,6 +110,15 @@ function loadRawPools()
         if not json.name or not json.variants or not json.enabled or not json.category then
             print("Invalid variant pool format in file: " .. filePath.name)
             goto continueVPFiles
+        end
+
+        local variants = {}
+        for _, v in ipairs(json.variants) do
+            if not v.resourcePath or not v.weight or not v.appearance then
+                print("Invalid variant format in pool file: " .. filePath.name)
+            else
+                table.insert(variants, variant:new(v.resourcePath, v.appearance, v.weight))
+            end
         end
 
         local vp = variantPool:new(json.name, json.variants, json.enabled, json.category)

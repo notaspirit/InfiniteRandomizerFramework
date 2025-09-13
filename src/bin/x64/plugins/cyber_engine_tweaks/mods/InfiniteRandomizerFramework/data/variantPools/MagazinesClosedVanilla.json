@@ -5,42 +5,52 @@
     "variants": [
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i.mesh",
+            "appearance": "default",
             "weight": 1
         },
         {
             "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j.mesh",
+            "appearance": "default",
             "weight": 1
         }
     ]
