@@ -1,5 +1,5 @@
 local jsonUtils = require("modules/jsonUtils")
-local category = require("modules/category")
+local logger = require("modules/logger")
 local utils = require("modules/utils")
 local variantPool = require("modules/variantPool")
 local variant = require("modules/variant")
@@ -26,7 +26,7 @@ function loadTargetMeshPaths()
     end)
 
     if not success then
-        print("Error loading categories directory: " .. tostring(dirFiles))
+        logger.error("Failed to get category directory: " .. tostring(dirFiles), true)
         return {}
     end
 
@@ -39,7 +39,7 @@ function loadTargetMeshPaths()
 
         local file = io.open(categoriesDir .. filePath.name, "r")
         if not file then
-            print("Error opening category file: " .. filePath.name)
+            logger.error("Failed to open category file: " .. filePath.name, true)
             goto continueCatFiles
         end
 
@@ -48,14 +48,21 @@ function loadTargetMeshPaths()
 
         local json = jsonUtils.JSONToTable(content)
         if not json then
-            print("Error parsing JSON in category file: " .. filePath.name)
+            logger.error("Failed to parse JSON in category file: " .. filePath.name, true)
             goto continueCatFiles
         end
 
         -- print(jsonUtils.TableToJSON(json))
 
         if json.name == nil or json.resourcePaths == nil then
-            print("Invalid category format in file: " .. filePath.name)
+            local errMsg = "Invalid category format in file: " .. filePath.name
+            if (json.name == nil) then
+                errMsg = errMsg .. " (missing 'name')"
+            end
+            if (json.resourcePaths == nil) then
+                errMsg = errMsg .. " (missing 'resourcePaths')"
+            end
+            logger.error(errMsg, true)
             goto continueCatFiles
         end
 
@@ -81,7 +88,7 @@ function loadRawPools()
     end)
 
     if not success then
-        print("Error loading variant pools directory: " .. tostring(dirFiles))
+        logger.error("Failed to get variant pools directory: " .. tostring(dirFiles), true)
         return {}
     end
 
@@ -94,7 +101,7 @@ function loadRawPools()
 
         local file = io.open(variantPoolsDir .. filePath.name, "r")
         if not file then
-            print("Error opening variant pool file: " .. filePath.name)
+            logger.error("Failed to open variant pool file: " .. filePath.name, true)
             goto continueVPFiles
         end
 
@@ -103,19 +110,42 @@ function loadRawPools()
 
         local json = jsonUtils.JSONToTable(content)
         if not json then
-            print("Error parsing JSON in variant pool file: " .. filePath.name)
+            logger.error("Failed to parse JSON in variant pool file: " .. filePath.name, true)
             goto continueVPFiles
         end
 
         if json.name == nil or json.variants == nil or json.enabled == nil or json.category == nil then
-            print("Invalid variant pool format in file: " .. filePath.name)
+            local errMsg = "Invalid variant pool format in file: " .. filePath.name
+            if (json.name == nil) then
+                errMsg = errMsg .. " (missing 'name')"
+            end
+            if (json.variants == nil) then
+                errMsg = errMsg .. " (missing 'variants')"
+            end
+            if (json.enabled == nil) then
+                errMsg = errMsg .. " (missing 'enabled')"
+            end
+            if (json.category == nil) then
+                errMsg = errMsg .. " (missing 'category')"
+            end
+            logger.error(errMsg, true)
             goto continueVPFiles
         end
 
         local variants = {}
         for _, v in ipairs(json.variants) do
             if v.resourcePath == nil or v.weight == nil or v.appearance == nil then
-                print("Invalid variant format in pool file: " .. filePath.name)
+                local errMsg = "Invalid variant format in pool: " .. json.name
+                if (v.resourcePath == nil) then
+                    errMsg = errMsg .. " (missing 'resourcePath')"
+                end
+                if (v.weight == nil) then
+                    errMsg = errMsg .. " (missing 'weight')"
+                end
+                if (v.appearance == nil) then
+                    errMsg = errMsg .. " (missing 'appearance')"
+                end
+                logger.warn(errMsg, true)
             else
                 table.insert(variants, variant:new(v.resourcePath, v.appearance, v.weight))
             end
@@ -123,8 +153,8 @@ function loadRawPools()
 
         local vp = variantPool:new(json.name, json.variants, json.enabled, json.category)
 
-        if (variantPools[vp.name]) then
-            print("Duplicate variant pool name found: " .. vp.name .. " in file: " .. filePath.name)
+        if (variantPools[vp.name]) then 
+            logger.warn("Duplicate variant pool name found: " .. vp.name .. " in file: " .. filePath.name, true)
         else
             variantPools[vp.name] = vp
             IRF.rawPoolPathLookup[vp.name] = variantPoolsDir .. filePath.name
@@ -138,11 +168,7 @@ end
 
 function buildMergedCategories()
     local mergedPools = {}
-
-    print("Building merged categories from raw pools...")
-
     for _, vp in pairs(IRF.rawPools) do
-        print("Processing pool: " .. vp.name .. " (Enabled: " .. tostring(vp.enabled) .. ", Category: " .. tostring(vp.category) .. ")")
         if not vp.enabled then
             goto continueMergePools
         end
@@ -165,13 +191,13 @@ end
 function stateManager.saveRawPool(name)
     local filePath = IRF.rawPoolPathLookup[name]
     if not filePath then
-        print("No file path found for pool: " .. name)
+        logger.error("No file path found for variant pool: " .. name, true)
         return
     end
 
     local file = io.open(filePath, "w")
     if not file then
-        print("Error opening file for writing: " .. filePath)
+        logger.error("Failed to open file for writing: " .. filePath, true)
         return
     end
 

@@ -3,7 +3,7 @@
 --- Author: sprt_
 
 local stateManager = require("modules/stateManager")
-local jsonUtils = require("modules/jsonUtils")
+local logger = require("modules/logger")
 local gui = require("modules/gui")
 
 ---@class IRF
@@ -49,7 +49,6 @@ registerForEvent('onHook', function()
                     if (not catName) then goto continueNodes end
 
                     local cat = {}
-                    -- print("Category Names: " .. jsonUtils.TableToJSON(catName))
                     for _, cname in ipairs(catName) do
                         local catVariants = IRF.mergedCategories[cname]
                         if (catVariants) then
@@ -59,7 +58,6 @@ registerForEvent('onHook', function()
                         end
                     end
 
-                    -- print("Category Variants: " .. jsonUtils.TableToJSON(cat))
                     local maxWeight = 0
                     for _, variant in ipairs(cat) do
                         maxWeight = maxWeight + variant.weight
@@ -77,18 +75,13 @@ registerForEvent('onHook', function()
                     end
                 
                     if (not Game.GetResourceDepot().ResourceExists(ResRef.FromString(cat[randomIndex].resourcePath))) then
-                        print("[WARNING] Skipping invalid resource path: " .. tostring(cat[randomIndex].resourcePath))
+                        logger.warn("Skipping non-existent resource: " .. cat[randomIndex].resourcePath, true)
                         goto continueNodes
                     end
 
-                    print("Random Index: " .. tostring(randomIndex))
-                    print(cat[randomIndex].resourcePath)
-                    print(cat[randomIndex].appearance)
-                    -- print("Old " .. ResRef.FromHash(node.mesh.hash):ToString())
+                    logger.info("Replacing " .. resPath .. "(" .. node.mesh.appearance:ToString() .. ") with " .. cat[randomIndex].resourcePath .. "(" .. cat[randomIndex].appearance .. ")")
                     node.mesh = cat[randomIndex].resourcePath
                     node.meshAppearance = cat[randomIndex].appearance
-                    
-                    -- print("New " .. ResRef.FromHash(node.mesh.hash):ToString())
                     ::continueNodes::
                 end
             end
@@ -99,7 +92,7 @@ end)
 
 registerForEvent("onInit", function()
     stateManager.load()
-    print("Infinite Randomizer Framework (IRF) v" .. IRF.version .. " initialized.")
+    logger.info("Infinite Randomizer Framework (IRF) v" .. IRF.version .. " initialized.", true)
 end)
 
 registerForEvent("onOverlayOpen", function()
