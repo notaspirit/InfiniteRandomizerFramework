@@ -83,7 +83,7 @@ registerForEvent('onHook', function()
             end
         }
     })
-    Game.GetCallbackSystem():RegisterCallback('Resource/PostLoad', inputListener:Target(), inputListener:Function('OnSectorLoaded'), true)
+    Game.GetCallbackSystem():RegisterCallback('Resource/PostLoad', inputListener:Target(), inputListener:Function('OnSectorLoaded'), true):AddTarget(ResourceTarget.Type("worldStreamingSector"))
 end)
 
 registerForEvent("onInit", function()
