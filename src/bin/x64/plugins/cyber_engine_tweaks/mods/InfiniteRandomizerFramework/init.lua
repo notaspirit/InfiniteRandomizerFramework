@@ -45,9 +45,19 @@ registerForEvent('onHook', function()
                     local resPath = ResRef.FromHash(node.mesh.hash):ToString()
                     local catName = IRF.targetMeshPaths[resPath]
                     if (not catName) then goto continueNodes end
-                    -- TODO handle multiple categories per mesh (merge pools)
-                    local cat = IRF.mergedCategories[catName[1]]
 
+                    local cat = {}
+                    -- print("Category Names: " .. jsonUtils.TableToJSON(catName))
+                    for _, cname in ipairs(catName) do
+                        local catVariants = IRF.mergedCategories[cname]
+                        if (catVariants) then
+                            for _, variant in ipairs(catVariants) do
+                                table.insert(cat, variant)
+                            end
+                        end
+                    end
+
+                    -- print("Category Variants: " .. jsonUtils.TableToJSON(cat))
                     local maxWeight = 0
                     for _, variant in ipairs(cat) do
                         maxWeight = maxWeight + variant.weight
@@ -64,12 +74,11 @@ registerForEvent('onHook', function()
                         end
                     end
                 
-                    if (not ResRef.FromString(cat[randomIndex].resourcePath):IsValid()) then
+                    if (not Game.GetResourceDepot().ResourceExists(ResRef.FromString(cat[randomIndex].resourcePath))) then
                         print("[WARNING] Skipping invalid resource path: " .. tostring(cat[randomIndex].resourcePath))
                         goto continueNodes
                     end
 
-                    -- add check to make sure the mesh path exists and the resource is valid to avoid crashes, if it isn't regamble with an attempt limit to avoid infinite loops
                     print("Random Index: " .. tostring(randomIndex))
                     print(cat[randomIndex].resourcePath)
                     print(cat[randomIndex].appearance)
