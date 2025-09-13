@@ -52,9 +52,9 @@ function loadTargetMeshPaths()
             goto continueCatFiles
         end
 
-        print(jsonUtils.TableToJSON(json))
+        -- print(jsonUtils.TableToJSON(json))
 
-        if not json.name or not json.resourcePaths then
+        if json.name == nil or json.resourcePaths == nil then
             print("Invalid category format in file: " .. filePath.name)
             goto continueCatFiles
         end
@@ -86,7 +86,7 @@ function loadRawPools()
     end
 
     local variantPools = {}
-
+    IRF.rawPoolPathLookup = {}
     for _, filePath in ipairs(dirFiles) do
         if not filePath.name:lower():match("%.json$") then
             goto continueVPFiles
@@ -107,14 +107,14 @@ function loadRawPools()
             goto continueVPFiles
         end
 
-        if not json.name or not json.variants or not json.enabled or not json.category then
+        if json.name == nil or json.variants == nil or json.enabled == nil or json.category == nil then
             print("Invalid variant pool format in file: " .. filePath.name)
             goto continueVPFiles
         end
 
         local variants = {}
         for _, v in ipairs(json.variants) do
-            if not v.resourcePath or not v.weight or not v.appearance then
+            if v.resourcePath == nil or v.weight == nil or v.appearance == nil then
                 print("Invalid variant format in pool file: " .. filePath.name)
             else
                 table.insert(variants, variant:new(v.resourcePath, v.appearance, v.weight))
@@ -127,6 +127,7 @@ function loadRawPools()
             print("Duplicate variant pool name found: " .. vp.name .. " in file: " .. filePath.name)
         else
             variantPools[vp.name] = vp
+            IRF.rawPoolPathLookup[vp.name] = variantPoolsDir .. filePath.name
         end
 
         ::continueVPFiles::
@@ -159,6 +160,24 @@ function buildMergedCategories()
     end
 
     return mergedPools
+end
+
+function stateManager.saveRawPool(name)
+    local filePath = IRF.rawPoolPathLookup[name]
+    if not filePath then
+        print("No file path found for pool: " .. name)
+        return
+    end
+
+    local file = io.open(filePath, "w")
+    if not file then
+        print("Error opening file for writing: " .. filePath)
+        return
+    end
+
+    local content = jsonUtils.TableToJSON(IRF.rawPools[name])
+    file:write(content)
+    file:close()
 end
 
 return stateManager

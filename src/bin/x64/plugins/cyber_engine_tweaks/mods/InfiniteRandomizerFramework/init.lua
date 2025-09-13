@@ -11,12 +11,14 @@ local gui = require("modules/gui")
 ---@field targetMeshPaths table<string, table<string>>
 ---@field rawPools table<VariantPool>
 ---@field mergedCategories table<string, table<IRFVariant>>
+---@field rawPoolPathLookup table<string, string>
 ---@field OverlayOpen boolean
 IRF = {
     version = "1.0.0",
     targetMeshPaths = {},
     mergedCategories = {},
     rawPools = {},
+    rawPoolPathLookup = {},
     OverlayOpen = false
 }
 

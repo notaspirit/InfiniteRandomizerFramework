@@ -19,6 +19,32 @@ function gui.draw()
 
         -- TODO 
         -- List all pools and their enabled/disabled state, allow toggling and save to disk
+        ImGui.Separator()
+        
+        if (ImGui.BeginTable("Variant Pools", 4,  ImGuiTableFlags.SizingFixedFit)) then
+            ImGui.TableSetupColumn("Enabled")
+            ImGui.TableSetupColumn("Pool Name")
+            ImGui.TableSetupColumn("Category")
+            ImGui.TableSetupColumn("Variants")
+            ImGui.TableHeadersRow()
+            for pool, _ in pairs(IRF.rawPools) do
+                local poolObj = IRF.rawPools[pool]
+                ImGui.TableNextRow()
+                ImGui.TableSetColumnIndex(0)
+                if ImGui.Button((poolObj.enabled and "[X]" or "[  ]") .. "##" .. poolObj.name) then
+                    poolObj.enabled = not poolObj.enabled
+                    stateManager.refreshEnabledPools()
+                    stateManager.saveRawPool(poolObj.name)
+                end
+                ImGui.TableSetColumnIndex(1)
+                ImGui.Text(poolObj.name)
+                ImGui.TableSetColumnIndex(2)
+                ImGui.Text(poolObj.category)
+                ImGui.TableSetColumnIndex(3)
+                ImGui.Text(tostring(#poolObj.variants))
+            end
+            ImGui.EndTable()
+        end
         ImGui.End()
     end
 end
