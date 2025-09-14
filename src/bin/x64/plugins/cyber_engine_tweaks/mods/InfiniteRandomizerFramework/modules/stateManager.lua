@@ -9,17 +9,7 @@ local variantPoolsDir = "data/variantPools/"
 
 local stateManager = {}
 
-function stateManager.load()
-    IRF.targetMeshPaths = loadTargetMeshPaths()
-    IRF.rawPools = loadRawPools()
-    IRF.mergedCategories = buildMergedCategories()
-end
-
-function stateManager.refreshEnabledPools()
-    IRF.mergedCategories = buildMergedCategories()
-end
-
-function loadTargetMeshPaths()
+local function loadTargetMeshPaths()
 
     local success, dirFiles = pcall(function()
         return dir(categoriesDir)
@@ -31,6 +21,7 @@ function loadTargetMeshPaths()
     end
 
     local targetMeshPaths = {}
+    local catTypeLookup = {}
 
     for _, filePath in ipairs(dirFiles) do
         if not filePath.name:lower():match("%.json$") then
@@ -52,37 +43,63 @@ function loadTargetMeshPaths()
             goto continueCatFiles
         end
 
-        -- print(jsonUtils.TableToJSON(json))
-
-        if json.name == nil or json.resourcePaths == nil then
+        if json.name == nil or json.resourcePaths == nil or #json.resourcePaths == 0 then
             local errMsg = "Invalid category format in file: " .. filePath.name
             if (json.name == nil) then
                 errMsg = errMsg .. " (missing 'name')"
             end
             if (json.resourcePaths == nil) then
                 errMsg = errMsg .. " (missing 'resourcePaths')"
+            else
+                if (#json.resourcePaths == 0) then
+                    errMsg = errMsg .. " ('resourcePaths' contains no elements)" 
+                end
             end
+            
             logger.error(errMsg, true)
             goto continueCatFiles
         end
 
+        local tempTargetMeshPaths = {}
+
+        for k, v in pairs(targetMeshPaths) do
+            local tempList = {}
+            for _, v in ipairs(v) do 
+                table.insert(tempList, v)
+            end
+            tempTargetMeshPaths[k] = tempList
+        end
+
+        local resourceType = nil
         for _, path in ipairs(json.resourcePaths) do
-            if (targetMeshPaths[path]) then
-                if (not utils.isInTable(targetMeshPaths[path], json.name)) then
-                    table.insert(targetMeshPaths[path], json.name)
+            local ext = path:match("([^%.]+)$")
+            if (not resourceType) then
+                resourceType = ext
+            end
+
+            if (not (ext == resourceType)) then
+                logger.error("Failed to load category " .. json.name .. " found mixed resource types!", true)
+                goto continueCatFiles
+            end
+
+            if (tempTargetMeshPaths[path]) then
+                if (not utils.isInTable(tempTargetMeshPaths[path], json.name)) then
+                    table.insert(tempTargetMeshPaths[path], json.name)
                 end
             else
-                targetMeshPaths[path] = { json.name }
+                tempTargetMeshPaths[path] = { json.name }
             end
         end
+        catTypeLookup[json.name] = resourceType
+        targetMeshPaths = tempTargetMeshPaths
 
         ::continueCatFiles::
     end
-
-    return targetMeshPaths
+    IRF.categoryTypeLookup = catTypeLookup
+    IRF.targetMeshPaths = targetMeshPaths
 end
 
-function loadRawPools()
+local function loadRawPools()
     local success, dirFiles = pcall(function()
         return dir(variantPoolsDir)
     end)
@@ -114,13 +131,17 @@ function loadRawPools()
             goto continueVPFiles
         end
 
-        if json.name == nil or json.variants == nil or json.enabled == nil or json.category == nil then
+        if json.name == nil or json.variants == nil or json.enabled == nil or json.category == nil or #json.variants == 0 then
             local errMsg = "Invalid variant pool format in file: " .. filePath.name
             if (json.name == nil) then
                 errMsg = errMsg .. " (missing 'name')"
             end
             if (json.variants == nil) then
                 errMsg = errMsg .. " (missing 'variants')"
+            else
+                if (#json.variants == 0) then
+                    errMsg = errMsg .. " ('variants' contains no elements)"
+                end
             end
             if (json.enabled == nil) then
                 errMsg = errMsg .. " (missing 'enabled')"
@@ -133,6 +154,7 @@ function loadRawPools()
         end
 
         local variants = {}
+        local resourceType = nil
         for _, v in ipairs(json.variants) do
             if v.resourcePath == nil or v.weight == nil or v.appearance == nil then
                 local errMsg = "Invalid variant format in pool: " .. json.name
@@ -147,11 +169,24 @@ function loadRawPools()
                 end
                 logger.warn(errMsg, true)
             else
+                local ext = v.resourcePath:match("([^%.]+)$")
+                if (not resourceType) then 
+                    resourceType = ext
+                end
+                if (not (ext == resourceType)) then
+                    logger.error("Failed to load variant pool " .. json.name .. " found mixed resource types!", true)
+                    goto continueVPFiles
+                end
+
                 table.insert(variants, variant:new(v.resourcePath, v.appearance, v.weight))
             end
         end
 
-        local vp = variantPool:new(json.name, json.variants, json.enabled, json.category)
+        local vp = variantPool:new(json.name, json.variants, json.enabled, json.category, resourceType)
+
+        if (#vp.variants == 0) then
+            logger.error("Failed to load variant Pool " .. json.name .. " variants contains no vaild elements", true)
+        end
 
         if (variantPools[vp.name]) then 
             logger.warn("Duplicate variant pool name found: " .. vp.name .. " in file: " .. filePath.name, true)
@@ -164,19 +199,25 @@ function loadRawPools()
     end
 
     IRF.sortedRawPoolKeys = {}
+
     for k, _ in pairs(variantPools) do
         table.insert(IRF.sortedRawPoolKeys, k)
     end
 
-    table.sort(IRF.sortedRawPoolKeys, function(a, b) return a < b end)
+    table.sort(IRF.sortedRawPoolKeys)
 
-    return variantPools
+    IRF.rawPools = variantPools
 end
 
-function buildMergedCategories()
+local function buildMergedCategories()
     local mergedPools = {}
     for _, vp in pairs(IRF.rawPools) do
         if not vp.enabled then
+            goto continueMergePools
+        end
+
+        if not (vp.resourceType == IRF.categoryTypeLookup[vp.category]) then
+            logger.error("Failed to add variant Pool " .. vp.name .. " to category " .. vp.category .. " due to resource type mismatch. Pool is of type " .. vp.resourceType .. " category is " .. IRF.categoryTypeLookup[vp.category], true)
             goto continueMergePools
         end
 
@@ -192,7 +233,17 @@ function buildMergedCategories()
         ::continueMergePools::
     end
 
-    return mergedPools
+    IRF.mergedCategories = mergedPools
+end
+
+function stateManager.load()
+    loadTargetMeshPaths()
+    loadRawPools()
+    buildMergedCategories()
+end
+
+function stateManager.refreshEnabledPools()
+    buildMergedCategories()
 end
 
 function stateManager.saveRawPool(name)
@@ -207,8 +258,10 @@ function stateManager.saveRawPool(name)
         logger.error("Failed to open file for writing: " .. filePath, true)
         return
     end
-
+    local resourceType = IRF.rawPools[name].resourceType
+    IRF.rawPools[name].resourceType = nil
     local content = jsonUtils.TableToJSON(IRF.rawPools[name])
+    IRF.rawPools[name].resourceType = resourceType
     file:write(content)
     file:close()
 end

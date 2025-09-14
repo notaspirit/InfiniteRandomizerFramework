@@ -12,6 +12,7 @@ local gui = require("modules/gui")
 ---@field rawPools table<VariantPool>
 ---@field mergedCategories table<string, table<IRFVariant>>
 ---@field rawPoolPathLookup table<string, string>
+---@field categoryTypeLookup table<string, string>
 ---@field sortedRawPoolKeys table<string>
 ---@field OverlayOpen boolean
 IRF = {
@@ -20,6 +21,7 @@ IRF = {
     mergedCategories = {},
     rawPools = {},
     rawPoolPathLookup = {},
+    categoryTypeLookup = {},
     sortedRawPoolKeys = {},
     OverlayOpen = false
 }

@@ -1,4 +1,6 @@
 local stateManager = require("modules/stateManager")
+local logger = require("modules/logger")
+local jsonUtils = require("modules/jsonUtils")
 
 local gui = {}
 
@@ -7,9 +9,12 @@ function gui.draw()
         if ImGui.Button("Reload From Disk") then
             stateManager.load()
         end
-
+        ImGui.SameLine()
+        if ImGui.Button("Dump State") then
+            logger.info(jsonUtils.TableToJSON(IRF), true)
+        end
         ImGui.Separator()
-        
+
         if (ImGui.BeginTable("Variant Pools", 4,  ImGuiTableFlags.SizingFixedFit)) then
             ImGui.TableSetupColumn("Enabled")
             ImGui.TableSetupColumn("Pool Name")

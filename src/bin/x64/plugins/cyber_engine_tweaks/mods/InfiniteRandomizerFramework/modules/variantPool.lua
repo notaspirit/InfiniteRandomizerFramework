@@ -6,13 +6,14 @@
 ---@field category string
 local variantPool = {}
 
-function variantPool:new(name, variants, enabled, category)
+function variantPool:new(name, variants, enabled, category, resourceType)
     local obj = {}
 
     obj.name = name
     obj.variants = variants or {}
     obj.enabled = (enabled == nil) and true or enabled
     obj.category = category
+    obj.resourceType = resourceType or ""
 
     setmetatable(obj, self)
     self.__index = self
