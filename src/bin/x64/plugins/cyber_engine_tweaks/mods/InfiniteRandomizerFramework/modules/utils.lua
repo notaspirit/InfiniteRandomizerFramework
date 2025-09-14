@@ -1,6 +1,6 @@
----@param table table
----@param value any
-local function isInTable(table, value)
+local utils = {}
+
+function utils.isInTable(table, value)
     for _, v in ipairs(table) do
         if v == value then
             return true
@@ -9,6 +9,4 @@ local function isInTable(table, value)
     return false
 end
 
-return {
-    isInTable = isInTable
-}
+return utils

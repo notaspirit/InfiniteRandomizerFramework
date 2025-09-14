@@ -163,6 +163,13 @@ function loadRawPools()
         ::continueVPFiles::
     end
 
+    IRF.sortedRawPoolKeys = {}
+    for k, _ in pairs(variantPools) do
+        table.insert(IRF.sortedRawPoolKeys, k)
+    end
+
+    table.sort(IRF.sortedRawPoolKeys, function(a, b) return a < b end)
+
     return variantPools
 end
 
