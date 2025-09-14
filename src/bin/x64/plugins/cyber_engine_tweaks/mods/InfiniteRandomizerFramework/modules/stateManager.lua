@@ -166,6 +166,11 @@ local function loadRawPools()
                 end
                 logger.warn(errMsg, true)
             else
+                if (v.weight < 0) then
+                    logger.warn("Skipping variant, weight must be non negative", true)
+                    goto continueVariants
+                end
+
                 local ext = v.resourcePath:match("([^%.]+)$")
                 if (not resourceType) then 
                     resourceType = ext
@@ -177,6 +182,7 @@ local function loadRawPools()
 
                 table.insert(variants, variant:new(v.resourcePath, v.appearance, v.weight))
             end
+            ::continueVariants::
         end
 
         local vp = variantPool:new(json.name, json.variants, json.enabled, json.category, resourceType)
