@@ -26,7 +26,7 @@ function gui.draw()
                 local poolObj = IRF.rawPools[k]
                 ImGui.TableNextRow()
                 ImGui.TableSetColumnIndex(0)
-                if ImGui.Button((poolObj.enabled and "[X]" or "[  ]") .. "##" .. poolObj.name) then
+                if ImGui.Button((poolObj.enabled and "[X]" or "[  ]") .. "##" .. tostring(poolObj.name)) then
                     poolObj.enabled = not poolObj.enabled
                     stateManager.refreshEnabledPools()
                     stateManager.saveRawPool(poolObj.name)

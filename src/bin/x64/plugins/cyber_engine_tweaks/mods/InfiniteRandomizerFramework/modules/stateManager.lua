@@ -28,9 +28,9 @@ local function loadTargetMeshPaths()
             goto continueCatFiles
         end
 
-        local file = io.open(categoriesDir .. filePath.name, "r")
+        local file = io.open(categoriesDir .. tostring(filePath.name), "r")
         if not file then
-            logger.error("Failed to open category file: " .. filePath.name, true)
+            logger.error("Failed to open category file: " .. tostring(filePath.name), true)
             goto continueCatFiles
         end
 
@@ -39,12 +39,12 @@ local function loadTargetMeshPaths()
 
         local json = jsonUtils.JSONToTable(content)
         if not json then
-            logger.error("Failed to parse JSON in category file: " .. filePath.name, true)
+            logger.error("Failed to parse JSON in category file: " .. tostring(filePath.name), true)
             goto continueCatFiles
         end
 
         if json.name == nil or json.resourcePaths == nil or #json.resourcePaths == 0 then
-            local errMsg = "Invalid category format in file: " .. filePath.name
+            local errMsg = "Invalid category format in file: " .. tostring(filePath.name)
             if (json.name == nil) then
                 errMsg = errMsg .. " (missing 'name')"
             end
@@ -78,7 +78,7 @@ local function loadTargetMeshPaths()
             end
 
             if (not (ext == resourceType)) then
-                logger.error("Failed to load category " .. json.name .. " found mixed resource types!", true)
+                logger.error("Failed to load category " .. tostring(json.name) .. " found mixed resource types!", true)
                 goto continueCatFiles
             end
 
@@ -116,9 +116,9 @@ local function loadRawPools()
             goto continueVPFiles
         end
 
-        local file = io.open(variantPoolsDir .. filePath.name, "r")
+        local file = io.open(tostring(variantPoolsDir) .. tostring(filePath.name), "r")
         if not file then
-            logger.error("Failed to open variant pool file: " .. filePath.name, true)
+            logger.error("Failed to open variant pool file: " .. tostring(filePath.name), true)
             goto continueVPFiles
         end
 
@@ -127,12 +127,12 @@ local function loadRawPools()
 
         local json = jsonUtils.JSONToTable(content)
         if not json then
-            logger.error("Failed to parse JSON in variant pool file: " .. filePath.name, true)
+            logger.error("Failed to parse JSON in variant pool file: " .. tostring(filePath.name), true)
             goto continueVPFiles
         end
 
         if json.name == nil or json.variants == nil or json.enabled == nil or json.category == nil or #json.variants == 0 then
-            local errMsg = "Invalid variant pool format in file: " .. filePath.name
+            local errMsg = "Invalid variant pool format in file: " .. tostring(filePath.name)
             if (json.name == nil) then
                 errMsg = errMsg .. " (missing 'name')"
             end
@@ -157,7 +157,7 @@ local function loadRawPools()
         local resourceType = nil
         for _, v in ipairs(json.variants) do
             if v.resourcePath == nil or v.weight == nil then
-                local errMsg = "Invalid variant format in pool: " .. json.name
+                local errMsg = "Invalid variant format in pool: " .. tostring(json.name)
                 if (v.resourcePath == nil) then
                     errMsg = errMsg .. " (missing 'resourcePath')"
                 end
@@ -176,7 +176,7 @@ local function loadRawPools()
                     resourceType = ext
                 end
                 if (not (ext == resourceType)) then
-                    logger.error("Failed to load variant pool " .. json.name .. " found mixed resource types!", true)
+                    logger.error("Failed to load variant pool " .. tostring(json.name) .. " found mixed resource types!", true)
                     goto continueVPFiles
                 end
 
@@ -188,14 +188,14 @@ local function loadRawPools()
         local vp = variantPool:new(json.name, json.variants, json.enabled, json.category, resourceType)
 
         if (#vp.variants == 0) then
-            logger.error("Failed to load variant Pool " .. json.name .. " variants contains no vaild elements", true)
+            logger.error("Failed to load variant Pool " .. tostring(json.name) .. " variants contains no vaild elements", true)
         end
 
         if (variantPools[vp.name]) then 
-            logger.warn("Duplicate variant pool name found: " .. vp.name .. " in file: " .. filePath.name, true)
+            logger.warn("Duplicate variant pool name found: " .. tostring(vp.name) .. " in file: " .. tostring(filePath.name), true)
         else
             variantPools[vp.name] = vp
-            IRF.rawPoolPathLookup[vp.name] = variantPoolsDir .. filePath.name
+            IRF.rawPoolPathLookup[vp.name] = tostring(variantPoolsDir) .. tostring(filePath.name)
         end
 
         ::continueVPFiles::
@@ -220,7 +220,7 @@ local function buildMergedCategories()
         end
 
         if not (vp.resourceType == IRF.categoryTypeLookup[vp.category]) then
-            logger.error("Failed to add variant Pool " .. vp.name .. " to category " .. vp.category .. " due to resource type mismatch. Pool is of type " .. vp.resourceType .. " category is " .. IRF.categoryTypeLookup[vp.category], true)
+            logger.error("Failed to add variant Pool " .. tostring(vp.name) .. " to category " .. tostring(vp.category) .. " due to resource type mismatch. Pool is of type " .. tostring(vp.resourceType) .. " category is " .. tostring(IRF.categoryTypeLookup[vp.category]), true)
             goto continueMergePools
         end
 
@@ -252,13 +252,13 @@ end
 function stateManager.saveRawPool(name)
     local filePath = IRF.rawPoolPathLookup[name]
     if not filePath then
-        logger.error("No file path found for variant pool: " .. name, true)
+        logger.error("No file path found for variant pool: " .. tostring(name), true)
         return
     end
 
     local file = io.open(filePath, "w")
     if not file then
-        logger.error("Failed to open file for writing: " .. filePath, true)
+        logger.error("Failed to open file for writing: " .. tostring(filePath), true)
         return
     end
     local resourceType = IRF.rawPools[name].resourceType

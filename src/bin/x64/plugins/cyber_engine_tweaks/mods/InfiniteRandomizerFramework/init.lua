@@ -30,9 +30,12 @@ local function getSimpleNodeType(node)
     if (node:IsA("worldMeshNode") or
         node:IsA("worldInstancedMeshNode") or
         node:IsA("worldBendedMeshNode") or
-        node:IsA("worldTerrainMeshNode") or
         node:IsA("worldFoliageNode")) then
         return "mesh"
+    end
+
+    if (node:IsA("worldTerrainMeshNode")) then
+        return "terrainMesh"
     end
 
     if (node:IsA("worldEntityNode")) then
@@ -63,6 +66,7 @@ local function OnSectorLoad(class, event)
         local resPath = nil
         switch(sType, {
             { value = "mesh", action = function() resPath = ResRef.FromHash(node.mesh.hash):ToString() end, break_ = true },
+            { value = "terrainMesh", action = function() resPath = ResRef.FromHash(node.meshRef.hash):ToString() end, break_ = true },
             { value = "entity", action = function() resPath = ResRef.FromHash(node.entityTemplate.hash):ToString() end, break_ = true },
             { value = "decal", action = function() resPath = ResRef.FromHash(node.material.hash):ToString() end, break_ = true  }
         })
@@ -101,19 +105,20 @@ local function OnSectorLoad(class, event)
         end
 
         if (not Game.GetResourceDepot().ResourceExists(ResRef.FromString(cat[randomIndex].resourcePath))) then
-            logger.warn("Skipping non-existent resource: " .. cat[randomIndex].resourcePath, true)
+            logger.warn("Skipping non-existent resource: " .. tostring(cat[randomIndex].resourcePath), true)
             goto continueNodes
         end
 
         local existingExt = resPath:match("([^%.]+)$")
         local replacementExt = cat[randomIndex].resourcePath:match("([^%.]+)$")
         if (not (existingExt == replacementExt)) then
-            logger.warn("Skipping mismatched resource: " .. cat[randomIndex].resourcePath .. " (expected " .. tostring(existingExt) .. " got " .. tostring(replacementExt) .. ")", true)
+            logger.warn("Skipping mismatched resource: " .. tostring(cat[randomIndex].resourcePath) .. " (expected " .. tostring(existingExt) .. " got " .. tostring(replacementExt) .. ")", true)
             goto continueNodes
         end
 
         switch(sType, {
             { value = "mesh", action = function() node.mesh = cat[randomIndex].resourcePath; node.meshAppearance = cat[randomIndex].appearance end, break_ = true },
+            { value = "terrainMesh", action = function() node.meshRef = cat[randomIndex].resourcePath end, break_ = true },
             { value = "entity", action = function() node.entityTemplate = cat[randomIndex].resourcePath; node.appearanceName = cat[randomIndex].appearance; node.instanceData = entEntityInstanceData:new()  end, break_ = true },
             { value = "decal", action = function() node.material = cat[randomIndex].resourcePath end, break_ = true  }
         })
@@ -124,7 +129,7 @@ end
 registerForEvent("onInit", function()
     stateManager.load()
     ObserveBefore("InfiniteRandomizerFramework", "OnSectorLoad", OnSectorLoad)
-    logger.info("Infinite Randomizer Framework (IRF) v" .. IRF.version .. " initialized.", true)
+    logger.info("Infinite Randomizer Framework (IRF) v" .. tostring(IRF.version) .. " initialized.", true)
 end)
 
 registerForEvent("onOverlayOpen", function()
