@@ -26,6 +26,26 @@ IRF = {
     OverlayOpen = false
 }
 
+local function getSimpleNodeType(node)
+    if (node:IsA("worldMeshNode") or
+        node:IsA("worldInstancedMeshNode") or
+        node:IsA("worldBendedMeshNode") or
+        node:IsA("worldTerrainMeshNode") or
+        node:IsA("worldFoliageNode")) then
+        return "mesh"
+    end
+
+    if (node:IsA("worldEntityNode")) then
+        return "entity"
+    end
+
+    if (node:IsA("worldStaticDecalNode")) then
+        return "decal"
+    end
+
+    return "invalid"
+end
+
 local function OnSectorLoad(class, event)
     local resource = event:GetResource()
     if (not IsDefined(resource)) then return end
@@ -34,16 +54,23 @@ local function OnSectorLoad(class, event)
     local nodeCount = resource:GetNodeCount()
     for i = 0, nodeCount - 1 do
         local node = resource:GetNode(i)
-        if (node == nil) then goto continueNodes end
-        if (node.mesh == nil) then goto continueNodes end
-        if (not node:IsA("worldMeshNode") and
-            not node:IsA("worldInstancedMeshNode") and
-            not node:IsA("worldBendedMeshNode") and
-            not node:IsA("worldTerrainMeshNode") and
-            not node:IsA("worldFoliageNode"))
-            then goto continueNodes end
+        if (not IsDefined(node)) then goto continueNodes end
+        local sType = getSimpleNodeType(node)
+        if (sType == "invalid") then
+            goto continueNodes
+        end
 
-        local resPath = ResRef.FromHash(node.mesh.hash):ToString()
+        local resPath = nil
+        switch(sType, {
+            { value = "mesh", action = function() resPath = ResRef.FromHash(node.mesh.hash):ToString() end, break_ = true },
+            { value = "entity", action = function() resPath = ResRef.FromHash(node.entityTemplate.hash):ToString() end, break_ = true },
+            { value = "decal", action = function() resPath = ResRef.FromHash(node.material.hash):ToString() end, break_ = true  }
+        })
+        
+        if (resPath == nil) then
+            logger.warn("Couldn't determine resource type, skipping", true)
+            goto continueNodes
+        end
         local catName = IRF.targetMeshPaths[resPath]
         if (not catName) then goto continueNodes end
 
@@ -72,15 +99,24 @@ local function OnSectorLoad(class, event)
                 break
             end
         end
-    
+
         if (not Game.GetResourceDepot().ResourceExists(ResRef.FromString(cat[randomIndex].resourcePath))) then
             logger.warn("Skipping non-existent resource: " .. cat[randomIndex].resourcePath, true)
             goto continueNodes
         end
 
-        -- logger.info("Replacing " .. resPath .. " with " .. cat[randomIndex].resourcePath .. " (" .. cat[randomIndex].appearance .. ")")
-        node.mesh = cat[randomIndex].resourcePath
-        node.meshAppearance = cat[randomIndex].appearance
+        local existingExt = resPath:match("([^%.]+)$")
+        local replacementExt = cat[randomIndex].resourcePath:match("([^%.]+)$")
+        if (not (existingExt == replacementExt)) then
+            logger.warn("Skipping mismatched resource: " .. cat[randomIndex].resourcePath .. " (expected " .. tostring(existingExt) .. " got " .. tostring(replacementExt) .. ")", true)
+            goto continueNodes
+        end
+
+        switch(sType, {
+            { value = "mesh", action = function() node.mesh = cat[randomIndex].resourcePath; node.meshAppearance = cat[randomIndex].appearance end, break_ = true },
+            { value = "entity", action = function() node.entityTemplate = cat[randomIndex].resourcePath; node.appearanceName = cat[randomIndex].appearance end, break_ = true },
+            { value = "decal", action = function() node.material = cat[randomIndex].resourcePath end, break_ = true  }
+        })
         ::continueNodes::
     end
 end

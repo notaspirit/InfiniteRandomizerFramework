@@ -10,7 +10,7 @@ function gui.draw()
             stateManager.load()
         end
         ImGui.SameLine()
-        if ImGui.Button("Dump State") then
+        if ImGui.Button("Print State") then
             logger.info(jsonUtils.TableToJSON(IRF), true)
         end
         ImGui.Separator()
