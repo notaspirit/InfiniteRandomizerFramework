@@ -1,0 +1,11 @@
+{
+  "name": "VendingMachine-K",
+  "resourcePaths": [
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_k_tiancha.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_k_nicola.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_k_run_down.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_k_chromanticore.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_k_voodooboy_den.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_k_cirrus.ent"
+  ]
+}

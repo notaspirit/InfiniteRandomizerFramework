@@ -1,0 +1,15 @@
+{
+  "name": "VendingMachine-F",
+  "resourcePaths": [
+    "ep1\\quest\\main_quests\\q306\\entities\\vending_machines\\brands\\vending_machine_f_burrito_spaceport.ent",
+    "ep1\\quest\\main_quests\\q306\\entities\\vending_machines\\brands\\vending_machine_f_holobites_spaceport.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_orgiatic.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_shwab.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_burrito_sts_hey_rey_01.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_burrito.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_holobites.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_mrwhitey.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_leelou.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_f_sojasil.ent"
+  ]
+}

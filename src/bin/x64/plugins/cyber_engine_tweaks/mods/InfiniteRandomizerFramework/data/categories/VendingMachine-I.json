@@ -1,0 +1,15 @@
+{
+  "name": "VendingMachine-I",
+  "resourcePaths": [
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_burrito.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_holobites.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_shwab.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_leelou.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_sojasil.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_burrito_sts_hey_rey_01.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_moonchies.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_mrwhitey.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_orgiatic.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_i_leelou_2.ent"
+  ]
+}

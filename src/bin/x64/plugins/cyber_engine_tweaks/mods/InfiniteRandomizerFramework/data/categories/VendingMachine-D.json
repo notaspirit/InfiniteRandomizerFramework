@@ -1,0 +1,17 @@
+{
+  "name": "VendingMachine-D",
+  "resourcePaths": [
+    "ep1\\quest\\main_quests\\q306\\entities\\vending_machines\\brands\\vending_machine_d_moonchies_spaceport.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_nicola.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_chromanticore_stadium.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_cirrus.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_moonchies_no_light.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_chromanticore_sts_hey_rey_01.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_sojasil_voodooboy_den.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_sojasil.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_moonchies_2m.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_chromanticore.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_moonchies.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_slaughterhouse.ent"
+  ]
+}

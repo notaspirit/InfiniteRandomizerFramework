@@ -1,0 +1,16 @@
+{
+  "name": "VendingMachine-A",
+  "resourcePaths": [
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_mrwhitey.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_gi_off.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_q003.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_3m.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_2m.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_orgiatic.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_shwab.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_slaughterhouse_ep1.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_slaughterhouse.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_brendan.ent",
+    "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito.ent"
+  ]
+}
