@@ -114,7 +114,7 @@ local function OnSectorLoad(class, event)
 
         switch(sType, {
             { value = "mesh", action = function() node.mesh = cat[randomIndex].resourcePath; node.meshAppearance = cat[randomIndex].appearance end, break_ = true },
-            { value = "entity", action = function() node.entityTemplate = cat[randomIndex].resourcePath; node.appearanceName = cat[randomIndex].appearance end, break_ = true },
+            { value = "entity", action = function() node.entityTemplate = cat[randomIndex].resourcePath; node.appearanceName = cat[randomIndex].appearance; node.instanceData = entEntityInstanceData:new()  end, break_ = true },
             { value = "decal", action = function() node.material = cat[randomIndex].resourcePath end, break_ = true  }
         })
         ::continueNodes::
