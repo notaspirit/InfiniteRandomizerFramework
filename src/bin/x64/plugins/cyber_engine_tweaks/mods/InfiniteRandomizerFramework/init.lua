@@ -23,11 +23,7 @@ IRF = {
 }
 
 local function OnSectorLoad(class, event)
-    print("OnSectorLoaded called")
-    print("event is " .. tostring(IsDefined(event)))
-    print(Dump(event, true))
     local resource = event:GetResource()
-    print("resource is " .. tostring(IsDefined(resource)))
     if (not IsDefined(resource)) then return end
     if (not resource:IsA('worldStreamingSector')) then return end
 
@@ -45,7 +41,6 @@ local function OnSectorLoad(class, event)
 
         local resPath = ResRef.FromHash(node.mesh.hash):ToString()
         local catName = IRF.targetMeshPaths[resPath]
-        print(resPath)
         if (not catName) then goto continueNodes end
 
         local cat = {}
