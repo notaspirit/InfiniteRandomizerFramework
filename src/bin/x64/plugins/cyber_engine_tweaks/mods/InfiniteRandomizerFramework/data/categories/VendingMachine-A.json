@@ -2,37 +2,120 @@
   "name": "VendingMachine-A",
   "entries": [
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_mrwhitey.ent"
+      "appearance": "vending_machines_a_orgiatic",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_gi_off.ent"
+      "appearance": "vending_machines_vending_machine_a",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_q003.ent"
+      "appearance": "vending_machines_a_burrito",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_3m.ent"
+      "appearance": "vending_machines_a_mrwhitey",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito_2m.ent"
+      "appearance": "vending_machines_a_brendan",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_orgiatic.ent"
+      "appearance": "vending_machines_a_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_shwab.ent"
+      "appearance": "vending_machines_a_burrito_2m",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_slaughterhouse_ep1.ent"
+      "appearance": "vending_machines_a_burrito_3m",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_slaughterhouse.ent"
+      "appearance": "vending_machines_a_burrito_q003",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_brendan.ent"
+      "appearance": "vending_machines_a_burrito_gi_off",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_a_burrito.ent"
+      "appearance": "vending_machines_a_slaughterhouse_ep1",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "appearance": "vending_machines_a_shwab",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_orgiatic",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_mrwhitey",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_brendan",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito_2m",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito_q003",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito_3m",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_a_shwab",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_orgiatic",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_mrwhitey",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_brendan",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito_2m",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito_q003",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_a_burrito_3m",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
     }
   ]
 }

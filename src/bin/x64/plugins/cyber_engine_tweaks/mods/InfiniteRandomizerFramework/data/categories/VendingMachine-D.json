@@ -2,40 +2,92 @@
   "name": "VendingMachine-D",
   "entries": [
     {
-      "resourcePath": "ep1\\quest\\main_quests\\q306\\entities\\vending_machines\\brands\\vending_machine_d_moonchies_spaceport.ent"
+      "appearance": "vending_machines_d_nicola",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_nicola.ent"
+      "appearance": "vending_machines_d_chromanticore",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_chromanticore_stadium.ent"
+      "appearance": "vending_machines_d_moonchies",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_cirrus.ent"
+      "appearance": "vending_machines_d_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_moonchies_no_light.ent"
+      "appearance": "vending_machines_d_sojasil",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_chromanticore_sts_hey_rey_01.ent"
+      "appearance": "vending_machines_d_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_sojasil_voodooboy_den.ent"
+      "appearance": "vending_machines_d_sojasil_voodooboy_den",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_sojasil.ent"
+      "appearance": "vending_machines_vending_machine_d_chromanticore_sts_hey_rey_01",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_moonchies_2m.ent"
+      "appearance": "vending_machines_d_chromanticore_stadium",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_chromanticore.ent"
+      "appearance": "vending_machines_d_moonchies_no_light",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_moonchies.ent"
+      "appearance": "vending_machines_d_nicola",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_d_slaughterhouse.ent"
+      "appearance": "vending_machines_d_chromanticore",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_d_moonchies",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_d_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_d_sojasil",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_d_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_d_nicola",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_d_chromanticore",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_d_moonchies",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_d_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_d_sojasil",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_d_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
     }
   ]
 }

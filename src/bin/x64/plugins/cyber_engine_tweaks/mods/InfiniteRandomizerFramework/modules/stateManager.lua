@@ -3,7 +3,7 @@ local logger = require("modules/logger")
 local utils = require("modules/utils")
 local variantPool = require("modules/variantPool")
 local variant = require("modules/variant")
-local targetMeshPath = require("modules/targetMeshPath")
+local categoryAppearancePair = require("modules/categoryAppearancePair")
 
 local categoriesDir = "data/categories/"
 local variantPoolsDir = "data/variantPools/"
@@ -83,12 +83,14 @@ local function loadTargetMeshPaths()
                 goto continueCatFiles
             end
 
+            local cap = categoryAppearancePair:new(catEntry.appearance, json.name)
+
             if (tempTargetMeshPaths[path]) then
-                if (not utils.isInTable(tempTargetMeshPaths[path].categories, json.name)) then
-                    table.insert(tempTargetMeshPaths[path].categories, json.name)
+                if (not utils.isInTable(tempTargetMeshPaths[path], cap)) then
+                    table.insert(tempTargetMeshPaths[path], cap)
                 end
             else
-                tempTargetMeshPaths[path] = targetMeshPath:new(catEntry.appearance, { json.name })
+                tempTargetMeshPaths[path] = { cap }
             end
             ::continueCatEntries::
         end

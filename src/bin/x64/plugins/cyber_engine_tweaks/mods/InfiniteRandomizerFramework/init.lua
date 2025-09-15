@@ -8,7 +8,7 @@ local gui = require("modules/gui")
 
 ---@class IRF
 ---@field version string
----@field targetMeshPaths table<string, table<string>>
+---@field targetMeshPaths table<string, table<CategoryAppearancePair>>
 ---@field rawPools table<VariantPool>
 ---@field mergedCategories table<string, table<IRFVariant>>
 ---@field rawPoolPathLookup table<string, string>
@@ -72,36 +72,39 @@ local function OnSectorLoad(class, event)
         })
 
         if (resPath == nil) then
-            logger.warn("Couldn't determine resource type, skipping", true)
+            logger.warn("Couldn't determine resource path, skipping", true)
             goto continueNodes
         end
         local meshEntry = IRF.targetMeshPaths[resPath]
         if (not meshEntry) then goto continueNodes end
 
-        if (not (meshEntry.appearance == nil)) then
+        local cat = {}
+        local addedCatNames = {}
+        for _, cname in ipairs(meshEntry) do
             local appMatch = nil
             switch(sType, {
-                { value = "mesh", action = function() appMatch = (meshEntry.appearance == CNameToString(node.meshAppearance)) end, break_ = true },
+                { value = "mesh", action = function() appMatch = (cname.appearance == CNameToString(node.meshAppearance)) end, break_ = true },
                 { value = "terrainMesh", action = function() appMatch = true end, break_ = true },
-                { value = "entity", action = function() appMatch = (meshEntry.appearance == CNameToString(node.appearanceName)) end, break_ = true },
+                { value = "entity", action = function() appMatch = (cname.appearance == CNameToString(node.appearanceName)) end, break_ = true },
                 { value = "decal", action = function() appMatch = true end, break_ = true  }
-                -- decal and terrainMesh have no appearance so the app requirement gets ignored
+                -- decal and terrainMesh have no appearance so the app gets ignored
             })
-            if not appMatch then 
-                goto continueNodes
+            if not appMatch then
+                goto continueCat
             end
-        end
 
-        local catName = meshEntry.categories
+            if (addedCatNames[cname.category]) then
+                goto continueCat
+            end
+            addedCatNames[cname.category] = true
 
-        local cat = {}
-        for _, cname in ipairs(catName) do
-            local catVariants = IRF.mergedCategories[cname]
+            local catVariants = IRF.mergedCategories[cname.category]
             if (catVariants) then
                 for _, variant in ipairs(catVariants) do
                     table.insert(cat, variant)
                 end
             end
+            ::continueCat::
         end
 
         local maxWeight = 0

@@ -2,16 +2,52 @@
   "name": "VendingMachine-C",
   "entries": [
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_c_cirrus.ent"
+      "appearance": "vending_machines_vending_machine_c",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_c_tiancha.ent"
+      "appearance": "vending_machines_c_nicola",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_c_nicola.ent"
+      "appearance": "vending_machines_c_chromanticore",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
     {
-      "resourcePath": "base\\gameplay\\devices\\vending_machines\\appearances\\vending_machine_c_chromanticore.ent"
+      "appearance": "vending_machines_c_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "appearance": "vending_machines_c_chromanticore",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_c_tiancha",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_c_nicola",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_c_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "appearance": "vending_machines_c_chromanticore",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_c_tiancha",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_c_nicola",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "appearance": "vending_machines_c_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
     }
   ]
 }

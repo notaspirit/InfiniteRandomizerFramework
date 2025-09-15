@@ -38,7 +38,7 @@ end
 
 ---@param cname CName
 function CNameToString(cname)
-    return tostring(cname):match("%-%-%[%[%s*([^%-]*)%s*%-%-%]%]")
+    return tostring(cname):match("%-%-%[%[%s*(.-)%s*%-%-%]%]")
 end
 
 return utils
