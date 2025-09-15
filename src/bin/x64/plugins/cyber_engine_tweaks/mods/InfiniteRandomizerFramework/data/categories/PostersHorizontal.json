@@ -1,12 +1,26 @@
 {
-    "name": "PostersHorizontal",
-    "resourcePaths": [
-        "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_b.mesh",
-        "base\\environment\\decoration\\advertising\\posters\\poster\\poster_rifle_smart.mesh",
-        "base\\environment\\decoration\\advertising\\posters\\poster\\poster_shotgun_smart.mesh",
-        "base\\environment\\decoration\\advertising\\posters\\poster\\poster_weapon_classes.mesh",
-        "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_a.mesh",
-        "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_b.mesh",
-        "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_g.mesh"
-    ]
+  "name": "PostersHorizontal",
+  "entries": [
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_b.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_rifle_smart.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_shotgun_smart.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_weapon_classes.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_a.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_b.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_g.mesh"
+    }
+  ]
 }

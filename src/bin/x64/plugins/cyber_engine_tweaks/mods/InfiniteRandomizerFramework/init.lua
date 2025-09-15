@@ -70,13 +70,29 @@ local function OnSectorLoad(class, event)
             { value = "entity", action = function() resPath = ResRef.FromHash(node.entityTemplate.hash):ToString() end, break_ = true },
             { value = "decal", action = function() resPath = ResRef.FromHash(node.material.hash):ToString() end, break_ = true  }
         })
-        
+
         if (resPath == nil) then
             logger.warn("Couldn't determine resource type, skipping", true)
             goto continueNodes
         end
-        local catName = IRF.targetMeshPaths[resPath]
-        if (not catName) then goto continueNodes end
+        local meshEntry = IRF.targetMeshPaths[resPath]
+        if (not meshEntry) then goto continueNodes end
+
+        if (not (meshEntry.appearance == nil)) then
+            local appMatch = nil
+            switch(sType, {
+                { value = "mesh", action = function() appMatch = (meshEntry.appearance == CNameToString(node.meshAppearance)) end, break_ = true },
+                { value = "terrainMesh", action = function() appMatch = true end, break_ = true },
+                { value = "entity", action = function() appMatch = (meshEntry.appearance == CNameToString(node.appearanceName)) end, break_ = true },
+                { value = "decal", action = function() appMatch = true end, break_ = true  }
+                -- decal and terrainMesh have no appearance so the app requirement gets ignored
+            })
+            if not appMatch then 
+                goto continueNodes
+            end
+        end
+
+        local catName = meshEntry.categories
 
         local cat = {}
         for _, cname in ipairs(catName) do

@@ -1,9 +1,17 @@
 {
-    "name": "MagazinesOpen",
-    "resourcePaths": [
-        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open.mesh",
-        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open.mesh",
-        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open.mesh",
-        "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open.mesh"
-    ]
+  "name": "MagazinesOpen",
+  "entries": [
+    {
+      "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open.mesh"
+    }
+  ]
 }

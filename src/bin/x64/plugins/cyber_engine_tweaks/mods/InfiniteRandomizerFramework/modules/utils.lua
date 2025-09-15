@@ -22,4 +22,23 @@ function switch(value, cases)
     end
 end
 
+
+---@param tableInput table
+function deepCopy(tableInput)
+    local newTable = {}
+    for key, value in pairs(tableInput) do
+        if type(value) == "table" then
+            newTable[key] = deepCopy(value)
+        else
+            newTable[key] = value
+        end
+    end
+    return newTable
+end
+
+---@param cname CName
+function CNameToString(cname)
+    return tostring(cname):match("%-%-%[%[%s*([^%-]*)%s*%-%-%]%]")
+end
+
 return utils

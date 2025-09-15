@@ -3,6 +3,7 @@ local logger = require("modules/logger")
 local utils = require("modules/utils")
 local variantPool = require("modules/variantPool")
 local variant = require("modules/variant")
+local targetMeshPath = require("modules/targetMeshPath")
 
 local categoriesDir = "data/categories/"
 local variantPoolsDir = "data/variantPools/"
@@ -43,16 +44,16 @@ local function loadTargetMeshPaths()
             goto continueCatFiles
         end
 
-        if json.name == nil or json.resourcePaths == nil or #json.resourcePaths == 0 then
+        if json.name == nil or json.entries == nil or #json.entries == 0 then
             local errMsg = "Invalid category format in file: " .. tostring(filePath.name)
             if (json.name == nil) then
                 errMsg = errMsg .. " (missing 'name')"
             end
-            if (json.resourcePaths == nil) then
-                errMsg = errMsg .. " (missing 'resourcePaths')"
+            if (json.entries == nil) then
+                errMsg = errMsg .. " (missing 'entries')"
             else
                 if (#json.resourcePaths == 0) then
-                    errMsg = errMsg .. " ('resourcePaths' contains no elements)" 
+                    errMsg = errMsg .. " ('entries' contains no elements)" 
                 end
             end
             
@@ -60,18 +61,18 @@ local function loadTargetMeshPaths()
             goto continueCatFiles
         end
 
-        local tempTargetMeshPaths = {}
-
-        for k, v in pairs(targetMeshPaths) do
-            local tempList = {}
-            for _, v in ipairs(v) do 
-                table.insert(tempList, v)
-            end
-            tempTargetMeshPaths[k] = tempList
-        end
+        local tempTargetMeshPaths = deepCopy(targetMeshPaths)
 
         local resourceType = nil
-        for _, path in ipairs(json.resourcePaths) do
+        for _, catEntry in ipairs(json.entries) do
+
+            local path = catEntry.resourcePath
+            
+            if (path == nil) then
+                logger.error("Category entry contains no resource path. Skipping...", true)
+                goto continueCatEntries
+            end
+
             local ext = path:match("([^%.]+)$")
             if (not resourceType) then
                 resourceType = ext
@@ -83,13 +84,15 @@ local function loadTargetMeshPaths()
             end
 
             if (tempTargetMeshPaths[path]) then
-                if (not utils.isInTable(tempTargetMeshPaths[path], json.name)) then
-                    table.insert(tempTargetMeshPaths[path], json.name)
+                if (not utils.isInTable(tempTargetMeshPaths[path].categories, json.name)) then
+                    table.insert(tempTargetMeshPaths[path].categories, json.name)
                 end
             else
-                tempTargetMeshPaths[path] = { json.name }
+                tempTargetMeshPaths[path] = targetMeshPath:new(catEntry.appearance, { json.name })
             end
+            ::continueCatEntries::
         end
+
         catTypeLookup[json.name] = resourceType
         targetMeshPaths = tempTargetMeshPaths
 
