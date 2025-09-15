@@ -81,18 +81,19 @@ local function OnSectorLoad(class, event)
         local cat = {}
         local addedCatNames = {}
         for _, cname in ipairs(meshEntry) do
-            local appMatch = nil
-            switch(sType, {
-                { value = "mesh", action = function() appMatch = (cname.appearance == CNameToString(node.meshAppearance)) end, break_ = true },
-                { value = "terrainMesh", action = function() appMatch = true end, break_ = true },
-                { value = "entity", action = function() appMatch = (cname.appearance == CNameToString(node.appearanceName)) end, break_ = true },
-                { value = "decal", action = function() appMatch = true end, break_ = true  }
-                -- decal and terrainMesh have no appearance so the app gets ignored
-            })
-            if not appMatch then
-                goto continueCat
+            if (not (cname.appearance == nil)) then 
+                local appMatch = nil
+                switch(sType, {
+                    { value = "mesh", action = function() appMatch = (cname.appearance == CNameToString(node.meshAppearance)) end, break_ = true },
+                    { value = "terrainMesh", action = function() appMatch = true end, break_ = true },
+                    { value = "entity", action = function() appMatch = (cname.appearance == CNameToString(node.appearanceName)) end, break_ = true },
+                    { value = "decal", action = function() appMatch = true end, break_ = true  }
+                    -- decal and terrainMesh have no appearance so the app gets ignored
+                })
+                if not appMatch then
+                    goto continueCat
+                end
             end
-
             if (addedCatNames[cname.category]) then
                 goto continueCat
             end
