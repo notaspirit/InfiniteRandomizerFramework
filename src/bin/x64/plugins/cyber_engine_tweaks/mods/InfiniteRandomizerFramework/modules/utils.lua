@@ -38,7 +38,13 @@ end
 
 ---@param cname CName
 function CNameToString(cname)
-    return tostring(cname):match("%-%-%[%[%s*(.-)%s*%-%-%]%]")
+    return tostring(cname):sub(58, -8)
+end
+
+---@param path string
+function GetExtension(path)
+    local dotPos = path:match(".*()%.")
+    return dotPos and path:sub(dotPos + 1) or ""
 end
 
 return utils

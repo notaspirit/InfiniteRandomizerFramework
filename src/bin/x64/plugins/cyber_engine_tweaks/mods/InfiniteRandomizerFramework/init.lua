@@ -49,6 +49,15 @@ local function getSimpleNodeType(node)
     return "invalid"
 end
 
+local function getAppName(node, st)
+    if (st == "mesh") then
+        return CNameToString(node.meshAppearance)
+    end
+    if (st == "entity") then
+        return CNameToString(node.appearanceName)
+    end
+end
+
 local function OnSectorLoad(class, event)
     local resource = event:GetResource()
     if (not IsDefined(resource)) then return end
@@ -80,13 +89,17 @@ local function OnSectorLoad(class, event)
 
         local cat = {}
         local addedCatNames = {}
+        local app = nil
         for _, cname in ipairs(meshEntry) do
             if (not (cname.appearance == nil)) then 
                 local appMatch = nil
+                if (app == nil) then
+                    app = getAppName(node, sType)
+                end
                 switch(sType, {
-                    { value = "mesh", action = function() appMatch = (cname.appearance == CNameToString(node.meshAppearance)) end, break_ = true },
+                    { value = "mesh", action = function() appMatch = (cname.appearance == app) end, break_ = true },
                     { value = "terrainMesh", action = function() appMatch = true end, break_ = true },
-                    { value = "entity", action = function() appMatch = (cname.appearance == CNameToString(node.appearanceName)) end, break_ = true },
+                    { value = "entity", action = function() appMatch = (cname.appearance == app) end, break_ = true },
                     { value = "decal", action = function() appMatch = true end, break_ = true  }
                     -- decal and terrainMesh have no appearance so the app gets ignored
                 })
@@ -129,8 +142,8 @@ local function OnSectorLoad(class, event)
             goto continueNodes
         end
 
-        local existingExt = resPath:match("([^%.]+)$")
-        local replacementExt = cat[randomIndex].resourcePath:match("([^%.]+)$")
+        local existingExt = GetExtension(resPath)
+        local replacementExt = GetExtension(cat[randomIndex].resourcePath)
         if (not (existingExt == replacementExt)) then
             logger.warn("Skipping mismatched resource: " .. tostring(cat[randomIndex].resourcePath) .. " (expected " .. tostring(existingExt) .. " got " .. tostring(replacementExt) .. ")", true)
             goto continueNodes

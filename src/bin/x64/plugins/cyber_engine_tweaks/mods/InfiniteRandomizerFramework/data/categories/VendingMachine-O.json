@@ -2,6 +2,10 @@
   "name": "VendingMachine-O",
   "entries": [
     {
+      "appearance": "default",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
       "appearance": "vending_machines_vending_machine_o",
       "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
     },
