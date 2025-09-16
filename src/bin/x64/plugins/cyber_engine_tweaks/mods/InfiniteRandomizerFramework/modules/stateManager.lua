@@ -3,7 +3,6 @@ local logger = require("modules/logger")
 local utils = require("modules/utils")
 local variantPool = require("modules/variantPool")
 local variant = require("modules/variant")
-local categoryAppearancePair = require("modules/categoryAppearancePair")
 
 local categoriesDir = "data/categories/"
 local variantPoolsDir = "data/variantPools/"
@@ -67,13 +66,13 @@ local function loadTargetMeshPaths()
         for _, catEntry in ipairs(json.entries) do
 
             local path = catEntry.resourcePath
-            
+            local app = catEntry.appearance or AnyApp
             if (path == nil) then
                 logger.error("Category entry contains no resource path. Skipping...", true)
                 goto continueCatEntries
             end
 
-            local ext = path:match("([^%.]+)$")
+            local ext = GetExtension(path)
             if (not resourceType) then
                 resourceType = ext
             end
@@ -83,14 +82,17 @@ local function loadTargetMeshPaths()
                 goto continueCatFiles
             end
 
-            local cap = categoryAppearancePair:new(catEntry.appearance, json.name)
-
             if (tempTargetMeshPaths[path]) then
-                if (not utils.isInTable(tempTargetMeshPaths[path], cap)) then
-                    table.insert(tempTargetMeshPaths[path], cap)
+                if (tempTargetMeshPaths[path][app]) then
+                    if (not utils.isInTable(tempTargetMeshPaths[path][app], json.name)) then
+                        table.insert(tempTargetMeshPaths[path][app], json.name)
+                    end
+                else
+                    tempTargetMeshPaths[path][app] = { json.name }
                 end
             else
-                tempTargetMeshPaths[path] = { cap }
+                tempTargetMeshPaths[path] = { }
+                tempTargetMeshPaths[path][app] = { json.name }
             end
             ::continueCatEntries::
         end

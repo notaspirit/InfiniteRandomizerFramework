@@ -9,20 +9,6 @@ function utils.isInTable(table, value)
     return false
 end
 
-function switch(value, cases)
-    local matched = false
-    for i, case in ipairs(cases) do
-        if case.value == value or matched then
-            matched = true
-            case.action()
-            if case.break_ then
-                break
-            end
-        end
-    end
-end
-
-
 ---@param tableInput table
 function deepCopy(tableInput)
     local newTable = {}
@@ -46,5 +32,8 @@ function GetExtension(path)
     local dotPos = path:match(".*()%.")
     return dotPos and path:sub(dotPos + 1) or ""
 end
+
+AnyApp = "b3eeea90-6d0b-4268-8ebf-5ef5af28ed6a" 
+-- used as a placeholder for any appearance to avoid potential collisions with actual appearance names
 
 return utils

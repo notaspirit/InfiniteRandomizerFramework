@@ -5,10 +5,11 @@
 local stateManager = require("modules/stateManager")
 local logger = require("modules/logger")
 local gui = require("modules/gui")
+local utils = require("modules/utils")
 
 ---@class IRF
 ---@field version string
----@field targetMeshPaths table<string, table<CategoryAppearancePair>>
+---@field targetMeshPaths table<string, table<string, table<string>>>
 ---@field rawPools table<VariantPool>
 ---@field mergedCategories table<string, table<IRFVariant>>
 ---@field rawPoolPathLookup table<string, string>
@@ -73,88 +74,82 @@ local function OnSectorLoad(class, event)
         end
 
         local resPath = nil
-        switch(sType, {
-            { value = "mesh", action = function() resPath = ResRef.FromHash(node.mesh.hash):ToString() end, break_ = true },
-            { value = "terrainMesh", action = function() resPath = ResRef.FromHash(node.meshRef.hash):ToString() end, break_ = true },
-            { value = "entity", action = function() resPath = ResRef.FromHash(node.entityTemplate.hash):ToString() end, break_ = true },
-            { value = "decal", action = function() resPath = ResRef.FromHash(node.material.hash):ToString() end, break_ = true  }
-        })
-
-        if (resPath == nil) then
+        if (sType == "mesh") then
+            resPath = ResRef.FromHash(node.mesh.hash):ToString()
+        elseif (sType == "terrainMesh") then
+            resPath = ResRef.FromHash(node.meshRef.hash):ToString()
+        elseif (sType == "entity") then
+            resPath = ResRef.FromHash(node.entityTemplate.hash):ToString()
+        elseif (sType == "decal") then
+            resPath = ResRef.FromHash(node.material.hash):ToString()
+        else
             logger.warn("Couldn't determine resource path, skipping", true)
             goto continueNodes
         end
+
         local meshEntry = IRF.targetMeshPaths[resPath]
         if (not meshEntry) then goto continueNodes end
 
-        local cat = {}
-        local addedCatNames = {}
-        local app = nil
-        for _, cname in ipairs(meshEntry) do
-            if (not (cname.appearance == nil)) then 
-                local appMatch = nil
-                if (app == nil) then
-                    app = getAppName(node, sType)
-                end
-                switch(sType, {
-                    { value = "mesh", action = function() appMatch = (cname.appearance == app) end, break_ = true },
-                    { value = "terrainMesh", action = function() appMatch = true end, break_ = true },
-                    { value = "entity", action = function() appMatch = (cname.appearance == app) end, break_ = true },
-                    { value = "decal", action = function() appMatch = true end, break_ = true  }
-                    -- decal and terrainMesh have no appearance so the app gets ignored
-                })
-                if not appMatch then
-                    goto continueCat
-                end
+        local app = getAppName(node, sType)
+        local mergedCats = {}
+        local totalWeight = 0
+        for _, catApp in ipairs(meshEntry[app] or {}) do
+            if not IRF.mergedCategories[catApp] then goto continue_catApp end
+            for _, v in ipairs(IRF.mergedCategories[catApp]) do
+                if utils.isInTable(mergedCats, v) then goto continue_v end
+                table.insert(mergedCats, v)
+                totalWeight = totalWeight + v.weight
+                ::continue_v::
             end
-            if (addedCatNames[cname.category]) then
-                goto continueCat
-            end
-            addedCatNames[cname.category] = true
-
-            local catVariants = IRF.mergedCategories[cname.category]
-            if (catVariants) then
-                for _, variant in ipairs(catVariants) do
-                    table.insert(cat, variant)
-                end
-            end
-            ::continueCat::
+            ::continue_catApp::
         end
 
-        local maxWeight = 0
-        for _, variant in ipairs(cat) do
-            maxWeight = maxWeight + variant.weight
+        for _, catApp in ipairs(meshEntry[AnyApp] or {}) do
+            if not IRF.mergedCategories[catApp] then goto continue_catApp1 end
+            for _, v in ipairs(IRF.mergedCategories[catApp]) do
+                if utils.isInTable(mergedCats, v) then goto continue_v1 end
+                table.insert(mergedCats, v)
+                totalWeight = totalWeight + v.weight
+                ::continue_v1::
+            end
+            ::continue_catApp1::
         end
-        if (maxWeight == 0) then goto continueNodes end
-        local randomValue = math.random(1, maxWeight)
 
-        local randomIndex = 1
-        for j, variant in ipairs(cat) do
+        if totalWeight == 0 then goto continueNodes end
+        local randomValue = math.random(1, totalWeight)
+        local selectedVariant = nil
+        for _, variant in ipairs(mergedCats) do
             randomValue = randomValue - variant.weight
-            if (randomValue <= 0) then
-                randomIndex = j
+            if randomValue <= 0 then
+                selectedVariant = variant
                 break
             end
         end
+        if not selectedVariant then goto continueNodes end
 
-        if (not Game.GetResourceDepot().ResourceExists(ResRef.FromString(cat[randomIndex].resourcePath))) then
-            logger.warn("Skipping non-existent resource: " .. tostring(cat[randomIndex].resourcePath), true)
+        if not Game.GetResourceDepot().ResourceExists(ResRef.FromString(selectedVariant.resourcePath)) then
+            logger.warn("Skipping non-existent resource: " .. tostring(selectedVariant.resourcePath), true)
             goto continueNodes
         end
-
         local existingExt = GetExtension(resPath)
-        local replacementExt = GetExtension(cat[randomIndex].resourcePath)
-        if (not (existingExt == replacementExt)) then
-            logger.warn("Skipping mismatched resource: " .. tostring(cat[randomIndex].resourcePath) .. " (expected " .. tostring(existingExt) .. " got " .. tostring(replacementExt) .. ")", true)
+        local replacementExt = GetExtension(selectedVariant.resourcePath)
+        if existingExt ~= replacementExt then
+            logger.warn("Skipping mismatched resource: " .. tostring(selectedVariant.resourcePath) .. " (expected " .. tostring(existingExt) .. " got " .. tostring(replacementExt) .. ")", true)
             goto continueNodes
         end
 
-        switch(sType, {
-            { value = "mesh", action = function() node.mesh = cat[randomIndex].resourcePath; node.meshAppearance = cat[randomIndex].appearance end, break_ = true },
-            { value = "terrainMesh", action = function() node.meshRef = cat[randomIndex].resourcePath end, break_ = true },
-            { value = "entity", action = function() node.entityTemplate = cat[randomIndex].resourcePath; node.appearanceName = cat[randomIndex].appearance; node.instanceData = entEntityInstanceData:new()  end, break_ = true },
-            { value = "decal", action = function() node.material = cat[randomIndex].resourcePath end, break_ = true  }
-        })
+        if sType == "mesh" then
+            node.mesh = selectedVariant.resourcePath
+            node.meshAppearance = selectedVariant.appearance
+        elseif sType == "terrainMesh" then
+            node.meshRef = selectedVariant.resourcePath
+        elseif sType == "entity" then
+            node.entityTemplate = selectedVariant.resourcePath
+            node.appearanceName = selectedVariant.appearance
+            node.instanceData = entEntityInstanceData:new()
+        elseif sType == "decal" then
+            node.material = selectedVariant.resourcePath
+        end
         ::continueNodes::
     end
 end
