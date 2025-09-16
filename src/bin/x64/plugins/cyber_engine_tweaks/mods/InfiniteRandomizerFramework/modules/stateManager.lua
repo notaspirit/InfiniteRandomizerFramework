@@ -163,13 +163,11 @@ local function loadRawPools()
         local variants = {}
         local resourceType = nil
         for _, v in ipairs(json.variants) do
-            if v.resourcePath == nil or v.weight == nil then
+            v.weight = v.weight or 1
+            if v.resourcePath == nil then
                 local errMsg = "Invalid variant format in pool: " .. tostring(json.name)
                 if (v.resourcePath == nil) then
                     errMsg = errMsg .. " (missing 'resourcePath')"
-                end
-                if (v.weight == nil) then
-                    errMsg = errMsg .. " (missing 'weight')"
                 end
                 logger.warn(errMsg, true)
             else
