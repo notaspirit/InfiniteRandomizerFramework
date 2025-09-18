@@ -1,0 +1,42 @@
+{
+    "name": "Vanilla-PostersHorizontal",
+    "enabled": true,
+    "category": "PostersHorizontal",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_b.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_rifle_smart.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_shotgun_smart.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_weapon_classes.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_a.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_b.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_g.mesh",
+            "weight": 1,
+            "appearance": "default"
+        }
+    ]
+}

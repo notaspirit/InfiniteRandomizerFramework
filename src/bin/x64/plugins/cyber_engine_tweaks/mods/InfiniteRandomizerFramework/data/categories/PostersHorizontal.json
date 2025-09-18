@@ -1,0 +1,26 @@
+{
+  "name": "PostersHorizontal",
+  "entries": [
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_b.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_rifle_smart.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_shotgun_smart.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_weapon_classes.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_a.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_b.mesh"
+    },
+    {
+      "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_g.mesh"
+    }
+  ]
+}

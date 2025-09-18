@@ -1,0 +1,407 @@
+{
+    "name": "8xMagazineFrameworkClosed",
+    "enabled": false,
+    "category": "MagazinesClosed",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_a_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_b_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_c_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_d_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_e_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_f_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_g_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_h_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_i_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_05.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_06.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_07.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_j_custom_08.mesh",
+            "weight": 1,
+            "appearance": "default"
+        }
+    ]
+}

@@ -1,0 +1,1122 @@
+{
+  "name": "12xVendingMachineFramework-B",
+  "enabled": false,
+  "category": "VendingMachine-B",
+  "variants": [
+    {
+      "weight": 1,
+      "appearance": "vending_machines_vending_machine_b",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_shwab",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_06",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_12",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_18",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_24",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_30",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_36",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_01",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_07",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_13",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_19",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_25",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_31",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_37",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_sojasil",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_05",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_11",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_17",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_23",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_29",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_35",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_leelou",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_03",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_09",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_15",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_21",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_27",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_33",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_39",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_04",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_10",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_16",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_22",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_28",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_34",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_40",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_holobites",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_02",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_08",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_14",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_20",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_26",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_32",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_38",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_holobites_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_cirrus_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_slaughterhouse_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_leelou_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_shwab_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_sojasil_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_burrito_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_vending_machine_b_holobites_sts_hey_rey_01",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_41",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_42",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_43",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_44",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_45",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_46",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_47",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_48",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_49",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_50",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_51",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_52",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_53",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_54",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_55",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_56",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_57",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_58",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_59",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_60",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_shwab",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_burrito",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_sojasil",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_leelou",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_holobites",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_holobites_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_cirrus_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_slaughterhouse_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_leelou_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_shwab_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_sojasil_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_burrito_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_01",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_02",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_03",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_04",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_05",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_06",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_07",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_08",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_09",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_10",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_11",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_12",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_13",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_14",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_15",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_16",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_17",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_18",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_19",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_20",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_21",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_22",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_23",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_24",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_25",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_26",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_27",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_28",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_29",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_30",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_31",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_32",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_33",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_34",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_35",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_36",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_37",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_38",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_39",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_40",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_41",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_42",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_43",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_44",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_45",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_46",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_47",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_48",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_49",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_50",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_51",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_52",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_53",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_54",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_55",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_56",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_57",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_58",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_59",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_60",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_shwab",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_burrito",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_cirrus",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_sojasil",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_leelou",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_slaughterhouse",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_holobites",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_holobites_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_cirrus_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_slaughterhouse_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_leelou_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_shwab_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_sojasil_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_burrito_cage",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_01",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_02",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_03",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_04",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_05",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_06",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_07",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_08",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_09",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_10",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_11",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_12",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_13",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_14",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_15",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_16",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_17",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_18",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_19",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_20",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_21",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_22",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_23",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_24",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_25",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_26",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_27",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_28",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_29",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_30",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_31",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_32",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_33",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_34",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_35",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_36",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_37",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_38",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_39",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_40",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_41",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_42",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_43",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_44",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_45",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_46",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_47",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_48",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_49",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_50",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_51",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_52",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_53",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_54",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_55",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_56",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_57",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_58",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_59",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    },
+    {
+      "weight": 1,
+      "appearance": "vending_machines_b_custom_60",
+      "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent"
+    }
+  ]
+}
