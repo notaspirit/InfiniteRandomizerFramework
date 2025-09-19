@@ -1,0 +1,142 @@
+{
+    "name": "Vanilla-VendingMachine-I",
+    "enabled": true,
+    "category": "VendingMachine-I",
+    "variants": [
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_vending_machine_i"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_shwab"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_burrito"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_leelou"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_moonchies"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_holobites"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_mrwhitey"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_sojasil"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_vending_machine_i_burrito_sts_hey_rey_01"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_leelou_2"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_orgiatic"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_shwab"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_burrito"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_leelou"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_moonchies"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_holobites"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_mrwhitey"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_sojasil"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_orgiatic"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_shwab"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_burrito"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_leelou"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_moonchies"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_holobites"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_mrwhitey"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_i_sojasil"
+        }
+    ]
+}

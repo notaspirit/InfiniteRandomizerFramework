@@ -1,0 +1,97 @@
+{
+    "name": "Vanilla-VendingMachine-E",
+    "enabled": true,
+    "category": "VendingMachine-E",
+    "variants": [
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_vending_machine_e"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_chromanticore"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_slaughterhouse"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_moonchies"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_mrwhitey"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_1.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_cirrus"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_chromanticore"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_nicola"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_slaughterhouse"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_moonchies"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_mrwhitey"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_2.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_cirrus"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_chromanticore"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_nicola"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_slaughterhouse"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_moonchies"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_mrwhitey"
+        },
+        {
+            "resourcePath": "base\\gameplay\\devices\\vending_machines\\vending_machine_3.ent",
+            "weight": 1,
+            "appearance": "vending_machines_e_cirrus"
+        }
+    ]
+}
