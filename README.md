@@ -33,14 +33,14 @@ This approach eliminates major issues in older frameworks and provides additiona
 - Supports modded streaming sectors
 - Works with `.mi` (decals), `.ent`, and `.mesh` resources
 - Configurable source and replacement pools
-- Easy to implement—resources just need to be registered, no forced project structure
+- Easy to implement, resources just need to be registered, no forced project structure
 - Backwards compatible with mods made for existing frameworks
 
 ---
 
 ## Installation
 
-Install like any other Cyberpunk 2077 mod—either manually or via a mod manager.
+Install like any other Cyberpunk 2077 mod, either manually or via a mod manager.
 
 ---
 
