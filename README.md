@@ -1,16 +1,51 @@
 # Infinite Randomizer Framework
-Infinite Randomizer Framework picks up where frameworks like 4x/8x Poster / Magazine Frameworks left off. 
 
-Instead of relying on removal and readdition of nodes via ArchiveXL which is fragile, inflexible and creates conflicts between mods implementing the framework IRF replaces resource paths as they load.
-This change of the approach fixes all major issues present in the existing frameworks and has added benefits like the replaced nodes being different every time they are loaded creating a more dynamic and variable environment. IRF supports .mi (decals), .ent and .mesh resources which are directly loaded by streaming sectors.
+Infinite Randomizer Framework (IRF) is a modding framework designed to replace older solutions like 4x/8x Poster and Magazine Frameworks. Unlike previous frameworks that relied on removing and re-adding nodes via ArchiveXL, a process that is fragile, inflexible, and prone to conflicts, IRF dynamically replaces resource paths as they load.  
 
-IRFs benefits as a list:
-- Implementing Mods Don't Conflict
-- Version Independent
-- Different Randomization On Every Load
-- Weighted Distribution
-- Supports Modded Streaming Sectors
-- Supports .mi (decals), .ent and .mesh resources
-- Configurable Source And Replacement Pools
-- Easy To Implement (Doesn't Force Any Project Structure, Resources Just Need To Be Registered)
-- Backwards Compatible (Mods Made For Existing Frameworks Will Work With IRF)
+This approach eliminates major issues in older frameworks and provides additional benefits, including true randomization every time resources are loaded. IRF currently supports `.mi` (decals), `.ent`, and `.mesh` resources that are directly loaded by streaming sectors.
+
+---
+
+## Table of Contents
+
+1. [Requirements](#requirements)
+2. [Key Benefits](#key-benefits)
+3. [Installation](#installation)
+4. [Implementation](#implementation)
+
+---
+
+## Requirements
+
+### Mandatory
+
+* **CyberEngineTweaks** ([GitHub](https://github.com/maximegmd/CyberEngineTweaks) | [Nexus](https://www.nexusmods.com/cyberpunk2077/mods/107))
+* **RedScript** ([GitHub](https://github.com/jac3km4/redscript) | [Nexus](https://www.nexusmods.com/cyberpunk2077/mods/1511))
+
+---
+
+## Key Benefits
+
+- Mods implementing IRF do not conflict with each other
+- Version-independent
+- Different randomization on every load
+- Weighted distribution for replacements
+- Supports modded streaming sectors
+- Works with `.mi` (decals), `.ent`, and `.mesh` resources
+- Configurable source and replacement pools
+- Easy to implement—resources just need to be registered, no forced project structure
+- Backwards compatible with mods made for existing frameworks
+
+---
+
+## Installation
+
+Install like any other Cyberpunk 2077 mod—either manually or via a mod manager.
+
+---
+
+## Implementation
+
+Mods relying on this framework require a [Variant Pool](https://wiki.redmodding.org/cyberpunk-2077-modding/modding-guides/world-editing/infinite-randomizer-framework/variant-pool) containing the replacement resources and the [Category](https://wiki.redmodding.org/cyberpunk-2077-modding/modding-guides/world-editing/infinite-randomizer-framework/category) it's targeting. For detailed information follow the links.
+
+---
