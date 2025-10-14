@@ -6,6 +6,7 @@
 #include "globals.h"
 #include "StreamingSectorNodeBuffer.h"
 #include "RED4ext/Scripting/Natives/Generated/world/MeshNode.hpp"
+#include <RedLib.hpp>
 
 namespace InfiniteRandomizerFramework
 {
@@ -17,17 +18,15 @@ namespace InfiniteRandomizerFramework
         g_sdk->logger->Info(g_pHandle, "OnSectorPostLoad called");
 
         auto* pRTTI = RED4ext::CRTTISystem::Get();
-
-
-
         for (auto& nodes = GetNodes(sector); const auto& node : nodes)
         {
             if (node->GetNativeType()->IsA(pRTTI->GetType("worldMeshNode")))
             {
                 g_sdk->logger->Info(g_pHandle, "Found worldMeshNode!");
+                const auto meshNode = Red::Cast<RED4ext::worldMeshNode>(node);
+                constexpr auto replacementPath = RED4ext::ResourcePath("cyberZ(h)ines\\meshes\\cyberzhines.mesh");
+                meshNode->mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementPath);
             }
         }
     }
-
-
 }

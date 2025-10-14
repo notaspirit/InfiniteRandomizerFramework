@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.12)
 
 project(InfiniteRandomizerFrameworkNative LANGUAGES CXX)
 
+add_compile_definitions(NOMINMAX)
+add_subdirectory(vendor/RedLib)
+cmake_policy(SET CMP0079 NEW)
+
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -18,3 +23,4 @@ mark_as_advanced(
 set(CMAKE_GENERATOR_PLATFORM x64)
 
 add_subdirectory(src)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE RedLib)
