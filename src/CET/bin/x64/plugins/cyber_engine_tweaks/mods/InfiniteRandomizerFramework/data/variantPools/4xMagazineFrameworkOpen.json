@@ -1,0 +1,87 @@
+{
+    "name": "4xMagazineFrameworkOpen",
+    "enabled": false,
+    "category": "MagazinesOpen",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        }
+    ]
+}

@@ -1,0 +1,297 @@
+{
+    "name": "Vanilla-PostersVertical",
+    "enabled": true,
+    "category": "PostersVertical",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_a.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_c.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_d.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_e.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_a.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_b.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_a.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_b.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_c.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_d.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_e.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_fixer.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_f.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_a.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_b.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_g.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_h.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_i.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_j.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_k.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_l.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_cyberhub.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_geisha.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_a.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_b.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_c.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_d.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_e.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_f.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_g.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_h.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_i.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_j.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_k.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_dragon.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_karasu.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_samurai.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_zona_girl.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_s_tainted.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_t_tainted.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_u_tainted.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_v_tainted.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_w_tainted.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_x_tainted.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_c.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_d.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_e.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_f.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_h.mesh",
+            "weight": 1,
+            "appearance": "default"
+        }
+    ]
+}

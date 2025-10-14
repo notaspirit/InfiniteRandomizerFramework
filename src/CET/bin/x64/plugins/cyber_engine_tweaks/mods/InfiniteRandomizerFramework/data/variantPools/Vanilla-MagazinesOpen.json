@@ -1,0 +1,27 @@
+{
+    "name": "Vanilla-MagazinesOpen",
+    "enabled": true,
+    "category": "MagazinesOpen",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_k_open.mesh",
+            "appearance": "default",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_l_open.mesh",
+            "appearance": "default",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_m_open.mesh",
+            "appearance": "default",
+            "weight": 1
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\misc\\paper\\magazine\\magazine_n_open.mesh",
+            "appearance": "default",
+            "weight": 1
+        }
+    ]
+}

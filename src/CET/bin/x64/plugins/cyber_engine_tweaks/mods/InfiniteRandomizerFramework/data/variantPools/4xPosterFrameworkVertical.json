@@ -1,0 +1,1172 @@
+{
+    "name": "4xPosterFrameworkVertical",
+    "enabled": false,
+    "category": "PostersVertical",
+    "variants": [
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_01_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_01_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_01_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_01_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_02_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_02_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_02_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_02_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_03_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_03_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_03_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\armbladeshop_poster_03_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_a_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_a_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_a_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_a_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_c_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_c_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_c_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_c_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_d_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_d_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_d_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_d_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_e_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_e_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_e_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_animals_e_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_a_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_a_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_a_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_a_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_b_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_b_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_b_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_b_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_a_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_a_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_a_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_a_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_b_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_b_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_b_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_cyberspace_b_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_c_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_c_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_c_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_c_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_d_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_d_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_d_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_d_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_e_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_e_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_e_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_e_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_fixer_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_fixer_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_fixer_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_fixer_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_f_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_f_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_f_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_f_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_a_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_a_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_a_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_a_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_b_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_b_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_b_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_games_b_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_g_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_g_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_g_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_g_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_h_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_h_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_h_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_h_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_i_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_i_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_i_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_i_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_j_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_j_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_j_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_j_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_k_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_k_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_k_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_k_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_l_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_l_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_l_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_l_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_cyberhub_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_cyberhub_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_cyberhub_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_m_cyberhub_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_geisha_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_geisha_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_geisha_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_n_geisha_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_a_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_a_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_a_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_a_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_b_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_b_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_b_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_b_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_c_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_c_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_c_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_c_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_d_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_d_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_d_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_d_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_e_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_e_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_e_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_e_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_f_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_f_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_f_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_f_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_g_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_g_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_g_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_g_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_h_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_h_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_h_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_h_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_i_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_i_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_i_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_i_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_j_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_j_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_j_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_j_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_k_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_k_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_k_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_old_movies_k_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_dragon_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_dragon_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_dragon_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_o_dragon_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_karasu_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_karasu_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_karasu_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_p_karasu_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_samurai_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_samurai_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_samurai_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_q_samurai_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_zona_girl_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_zona_girl_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_zona_girl_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_r_zona_girl_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_s_tainted_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_s_tainted_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_s_tainted_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_s_tainted_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_t_tainted_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_t_tainted_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_t_tainted_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_t_tainted_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_u_tainted_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_u_tainted_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_u_tainted_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_u_tainted_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_v_tainted_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_v_tainted_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_v_tainted_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_v_tainted_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_w_tainted_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_w_tainted_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_w_tainted_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_w_tainted_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_x_tainted_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_x_tainted_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_x_tainted_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster\\poster_x_tainted_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_c_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_c_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_c_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_c_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_d_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_d_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_d_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_d_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_e_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_e_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_e_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_e_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_f_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_f_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_f_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_f_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_h_custom_01.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_h_custom_02.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_h_custom_03.mesh",
+            "weight": 1,
+            "appearance": "default"
+        },
+        {
+            "resourcePath": "base\\environment\\decoration\\advertising\\posters\\poster_gym\\poster_gym_h_custom_04.mesh",
+            "weight": 1,
+            "appearance": "default"
+        }
+    ]
+}
