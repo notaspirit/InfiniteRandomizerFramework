@@ -1,7 +1,10 @@
-add_library(${CMAKE_PROJECT_NAME} SHARED "")
+add_library(${CMAKE_PROJECT_NAME} SHARED ""
+        globals.h
+        InfiniteRandomizerFrameworkNative.cpp
+        InfiniteRandomizerFrameworkNative.h
+        StreamingSectorNodeBuffer.h)
 
 set(PROJECT_HEADER_FILES
-        main.h
 )
 
 set(PROJECT_SRC_FILES
