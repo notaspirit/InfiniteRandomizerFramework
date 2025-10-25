@@ -1,5 +1,6 @@
 #pragma once
 #include "DataStructs/Category.h"
+#include "DataStructs/VariantPool.h"
 #include "DataStructs/Replacements.h"
 #include "RED4ext/ResourceDepot.hpp"
 #include "RED4ext/RTTISystem.hpp"
@@ -26,6 +27,7 @@ private:
     static inline RED4ext::CRTTISystem* m_rttis = std::nullptr_t();
     static void LoadFromDiskInternal();
     static std::unordered_map<std::string, Category> LoadCategoriesFromDisk();
+    static std::unordered_map<std::string, VariantPool> LoadVariantPoolsFromDisk();
 };
 
 }

@@ -6,13 +6,12 @@
 namespace InfiniteRandomizerFramework {
 
     struct CategoryEntry {
-        const RED4ext::ResourcePath resourcePath;
-        const char* appearance;
+        RED4ext::ResourcePath resourcePath;
+        std::string appearance;
     };
 
     struct Category {
-        const char* name;
-        const char* extension;
+        std::string extension;
         std::vector<CategoryEntry> entries;
     };
 }

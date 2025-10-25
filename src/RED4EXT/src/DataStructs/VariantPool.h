@@ -6,15 +6,14 @@
 namespace InfiniteRandomizerFramework {
 
     struct VariantPoolEntry {
-        const RED4ext::ResourcePath resourcePath;
-        const char* appearance;
-        const float weight;
+        RED4ext::ResourcePath resourcePath;
+        std::string appearance;
+        double weight;
     };
 
     struct VariantPool {
-        const char* name;
-        const char* extension;
-        const char* category;
+        std::string extension;
+        std::string category;
         std::vector<VariantPoolEntry> entries;
     };
 }

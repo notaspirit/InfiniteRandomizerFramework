@@ -11,6 +11,10 @@ namespace InfiniteRandomizerFramework {
         g_sdk->logger->Error(g_pHandle, message.c_str());
     }
 
+    void RedLogger::Warning(const std::string& message) {
+        g_sdk->logger->Warn(g_pHandle, message.c_str());
+    }
+
     void RedLogger::Debug(const std::string& message) {
         if (!g_isDebug) {
             return;
