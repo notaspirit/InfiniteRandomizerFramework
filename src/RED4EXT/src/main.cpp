@@ -25,17 +25,22 @@ namespace InfiniteRandomizerFramework
 
     RED4EXT_C_EXPORT void RED4EXT_CALL PostRegisterTypes()
     {
-        auto rtti = RED4ext::CRTTISystem::Get();
-        auto scriptable = rtti->GetClass("IScriptable");
+        const auto rtti = RED4ext::CRTTISystem::Get();
+        const auto scriptable = rtti->GetClass("IScriptable");
         customControllerClass.parent = scriptable;
 
-        auto onSectorPostLoad =
+        const auto onSectorPostLoad =
             RED4ext::CClassStaticFunction::Create(&customControllerClass, "OnSectorPostLoad", "OnSectorPostLoad",
             &InfiniteRandomizerFrameworkNative::OnSectorPostLoad, {.isNative = true, .isStatic = true});
 
         onSectorPostLoad->AddParam("handle:worldStreamingSector", "sector");
-
         customControllerClass.RegisterFunction(onSectorPostLoad);
+
+        const auto initialize =
+            RED4ext::CClassStaticFunction::Create(&customControllerClass, "Initialize", "Initialize",
+            &InfiniteRandomizerFrameworkNative::Initialize, {.isNative = true, .isStatic = true});
+
+        customControllerClass.RegisterFunction(initialize);
     }
 
     RED4EXT_C_EXPORT bool RED4EXT_CALL Main(RED4ext::PluginHandle aHandle, RED4ext::EMainReason aReason, const RED4ext::Sdk* aSdk)

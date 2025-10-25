@@ -24,3 +24,7 @@ set(CMAKE_GENERATOR_PLATFORM x64)
 
 add_subdirectory(src)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE RedLib)
+
+add_library(RapidJson INTERFACE)
+target_include_directories(RapidJson INTERFACE vendor/RapidJson)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE RapidJson)
