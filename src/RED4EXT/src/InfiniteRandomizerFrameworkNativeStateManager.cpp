@@ -1,18 +1,14 @@
 #include "InfiniteRandomizerFrameworkNative.h"
 
 #include <fstream>
-
 #include "RED4ext/Scripting/Utils.hpp"
 #include "Red4ext/Red4ext.hpp"
-#include "RED4ext/Scripting/Natives/Generated/world/StreamingSector.hpp"
-#include "globals.h"
-#include "StreamingSectorNodeBuffer.h"
-#include "RED4ext/Scripting/Natives/Generated/world/MeshNode.hpp"
+#include "DataStructs/Globals.h"
 #include <RedLib.hpp>
-#include "document.h"
-#include "writer.h"
 #include "RED4ext/ResourceDepot.hpp"
 #include "RedLogger.h"
+#include <RapidJson/document.h>
+#include <RapidJson/error/en.h>
 
 
 namespace fs = std::filesystem;
@@ -227,26 +223,36 @@ namespace InfiniteRandomizerFramework
         }
     }
 
-    void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *aContext, RED4ext::CStackFrame *aFrame, RED4ext::CString *aOut, int64_t a4) {
-        RED4ext::Handle<RED4ext::worldStreamingSector> sector;
-        RED4ext::GetParameter(aFrame, &sector);
-        aFrame->code++;
+    std::unordered_map<std::string, Category> InfiniteRandomizerFrameworkNative::LoadCategoriesFromDisk() {
+        const auto categoryDir = std::filesystem::current_path().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\categories)";
+        auto parsedCategories = std::unordered_map<std::string, Category>();
 
-        if (!m_initialized)
+        try
         {
-            return;
-        }
-
-        auto* pRTTI = RED4ext::CRTTISystem::Get();
-        auto* depot = RED4ext::ResourceDepot::Get();
-        for (auto& nodes = GetNodes(sector); const auto& node : nodes)
+        for (const auto& entry : fs::directory_iterator(categoryDir))
         {
-            if (node->GetNativeType()->IsA(pRTTI->GetType("worldMeshNode")))
+            auto entryPath = entry.path().string();
+            if (!entryPath.ends_with(".json") || !entry.is_regular_file())
             {
-                const auto meshNode = Red::Cast<RED4ext::worldMeshNode>(node);
-                constexpr auto replacementPath = RED4ext::ResourcePath("cyberZ(h)ines\\meshes\\cyberzhines.mesh");
-                meshNode->mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementPath);
+                continue;
+            }
+
+            rapidjson::Document doc;
+            std::ifstream fileStream(entryPath);
+            std::stringstream buffer;
+            buffer << fileStream.rdbuf();
+            doc.Parse(buffer.str().c_str());
+
+            if (doc.HasParseError()) {
+                RedLogger::Error(std::format("Failed to parse category file {} with error {}.", entryPath, rapidjson::GetParseError_En(doc.GetParseError())));
             }
         }
+        }
+        catch (const std::exception &e)
+        {
+        RedLogger::Error(std::format("Failed to load Categories from disk with error: {}", e.what()));
+        return {};
+        }
     }
+
 }

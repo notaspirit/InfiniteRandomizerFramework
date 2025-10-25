@@ -1,6 +1,6 @@
 #include <RED4ext/RED4ext.hpp>
 #include "InfiniteRandomizerFrameworkNative.h"
-#include "globals.h"
+#include "DataStructs/Globals.h"
 
 namespace InfiniteRandomizerFramework
 {

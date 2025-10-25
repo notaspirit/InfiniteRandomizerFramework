@@ -1,5 +1,6 @@
 #pragma once
-#include "Structs.h"
+#include "DataStructs/Category.h"
+#include "DataStructs/Replacements.h"
 #include "RED4ext/ResourceDepot.hpp"
 #include "RED4ext/RTTISystem.hpp"
 #include "RED4ext/Scripting/IScriptable.hpp"
@@ -24,6 +25,7 @@ private:
     static inline RED4ext::ResourceDepot* m_depot = std::nullptr_t();
     static inline RED4ext::CRTTISystem* m_rttis = std::nullptr_t();
     static void LoadFromDiskInternal();
+    static std::unordered_map<std::string, Category> LoadCategoriesFromDisk();
 };
 
 }

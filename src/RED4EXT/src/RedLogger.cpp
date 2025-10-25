@@ -1,6 +1,6 @@
 #include "RedLogger.h"
 
-#include "globals.h"
+#include "DataStructs/Globals.h"
 
 namespace InfiniteRandomizerFramework {
     void RedLogger::Info(const std::string& message) {
