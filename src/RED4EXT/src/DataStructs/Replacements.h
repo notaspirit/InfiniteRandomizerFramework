@@ -13,6 +13,6 @@ struct Replacements
     // then it is negative and the absolute value is equal to the amount of entries.
     std::unique_ptr<std::vector<float>> weights;
     std::unique_ptr<std::vector<RED4ext::CName>> appNames;
-    std::unique_ptr<std::vector<uint64_t>> resourcePaths;
+    std::unique_ptr<std::vector<RED4ext::ResourcePath>> resourcePaths;
 };
 }

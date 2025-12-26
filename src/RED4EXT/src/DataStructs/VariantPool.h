@@ -8,7 +8,7 @@ namespace InfiniteRandomizerFramework {
     struct VariantPoolEntry {
         RED4ext::ResourcePath resourcePath;
         std::string appearance;
-        double weight;
+        float weight;
     };
 
     struct VariantPool {

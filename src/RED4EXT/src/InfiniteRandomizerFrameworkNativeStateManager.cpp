@@ -1,6 +1,8 @@
 #include "InfiniteRandomizerFrameworkNative.h"
 
 #include <fstream>
+#include <ranges>
+
 #include "RED4ext/Scripting/Utils.hpp"
 #include "Red4ext/Red4ext.hpp"
 #include "DataStructs/Globals.h"
@@ -11,7 +13,7 @@
 #include "RedLogger.h"
 #include <RapidJson/document.h>
 #include <RapidJson/error/en.h>
-
+#include "xxhash64.h"
 
 namespace fs = std::filesystem;
 
@@ -28,6 +30,9 @@ namespace InfiniteRandomizerFramework
         m_depot = RED4ext::ResourceDepot::Get();
         m_rttis = RED4ext::CRTTISystem::Get();
 
+        m_rng = FastRNG();
+        m_rng.state = std::chrono::system_clock::now().time_since_epoch().count();
+
         LoadFromDiskInternal();
 
         m_initialized = true;
@@ -41,20 +46,149 @@ namespace InfiniteRandomizerFramework
 
     void InfiniteRandomizerFrameworkNative::LoadFromDiskInternal()
     {
-        m_replacements.clear();
+        RedLogger::Debug("Loading State From Disk");
 
-        auto loadedVariantPools = std::make_unique<std::unordered_map<std::string, std::shared_ptr<Replacements>>>();
-        auto categoryTypeLookup = std::make_unique<std::unordered_map<std::string, std::string>>();
+        m_replacements.clear();
 
         auto categories = LoadCategoriesFromDisk();
         auto variantPools = LoadVariantPoolsFromDisk();
 
+        RedLogger::Debug("Loaded " + std::to_string(categories.size()) + " categories from disk");
+        RedLogger::Debug("Loaded " + std::to_string(variantPools.size()) + " pools from disk");
 
+        // string represents the xxhash64 as a list of all categories that the given replacement contains, separated via a _
+        std::unordered_map<std::string, std::shared_ptr<Replacements>> replacementMap;
+
+        RedLogger::Debug("Parsed Categories and Variant Pools. Loading Variant Pools...");
+
+        for (const auto& pool : variantPools) {
+            if (!categories.contains(pool.second.category)) {
+                RedLogger::Error(std::format("Failed to load variant pool {}: target category {} does not exist.", pool.first, pool.second.category));
+                continue;
+            }
+
+            Category& targetCat = categories.at(pool.second.category);
+            if (targetCat.extension != pool.second.extension) {
+                RedLogger::Error(std::format("Failed to load variant pool {}: target category {} type ({}), does not match variant pool type ({}).", pool.first, pool.second.category, targetCat.extension, pool.second.extension));
+                continue;
+            }
+
+            std::shared_ptr<Replacements> replacement;
+            auto catNameHash = XXHash64::hash(pool.second.category.data(), pool.second.category.size(), 0);
+            auto catNameHashStr = std::to_string(catNameHash);
+            if (replacementMap.contains(catNameHashStr)) {
+                replacement = replacementMap.at(catNameHashStr);
+            }
+            else {
+                replacement = std::make_shared<Replacements>();
+                replacement->weights = std::make_unique<std::vector<float>>();
+                replacement->appNames = std::make_unique<std::vector<RED4ext::CName>>();
+                replacement->resourcePaths = std::make_unique<std::vector<RED4ext::ResourcePath>>();
+                replacement->weights->push_back(0);
+            }
+
+            for (const auto& poolEntry : pool.second.entries) {
+                replacement->weights->at(0) += poolEntry.weight;
+                replacement->weights->push_back(poolEntry.weight);
+                replacement->appNames->push_back(RED4ext::CName(poolEntry.appearance.c_str()));
+                replacement->resourcePaths->push_back(poolEntry.resourcePath);
+            }
+
+            if (!replacementMap.contains(catNameHashStr)) {
+                replacementMap.insert(std::make_pair(catNameHashStr, replacement));
+            }
+        }
+
+        RedLogger::Debug("Loaded Variant Pools. Loading Categories...");
+
+        std::unordered_map<uint64_t, std::unordered_map<RED4ext::CName, std::string>> addedCategories;
+
+        for (const auto& cat : categories) {
+            auto catNameHash = XXHash64::hash(cat.first.data(), cat.first.size(), 0);
+            auto catNameHashStr = std::to_string(catNameHash);
+
+            if (!replacementMap.contains(catNameHashStr)) {
+                continue;
+            }
+
+            for (const auto& catEntry : cat.second.entries) {
+                if (addedCategories.contains(catEntry.resourcePath.hash)) {
+                    auto& existingAppMap = addedCategories.at(catEntry.resourcePath.hash);
+                    if (existingAppMap.contains(catEntry.appearance)) {
+                        auto& existingCatName = existingAppMap.at(catEntry.appearance);
+                        auto& existingReplacement = replacementMap.at(existingCatName);
+                        existingCatName = std::format("{}_{}", existingCatName, catNameHashStr);
+
+                        auto newReplacement = std::make_shared<Replacements>();
+                        std::ranges::copy(*existingReplacement->weights, newReplacement->weights->begin());
+                        std::ranges::copy(*existingReplacement->appNames, newReplacement->appNames->begin());
+                        std::ranges::copy(*existingReplacement->resourcePaths, newReplacement->resourcePaths->begin());
+
+                        newReplacement->weights->insert(newReplacement->weights->end(), *existingReplacement->weights->begin() + 1);
+                        newReplacement->appNames->insert(newReplacement->appNames->end(), *existingReplacement->appNames->begin());
+                        newReplacement->resourcePaths->insert(newReplacement->resourcePaths->end(), *existingReplacement->resourcePaths->begin());
+
+                        newReplacement->weights->at(0) = 0.0f;
+                        for (const auto& weightEntry : *newReplacement->weights) {
+                            newReplacement->weights->at(0) += weightEntry;
+                        }
+
+                        replacementMap.at(catNameHashStr) = std::move(newReplacement);
+                    }
+                    else {
+                        existingAppMap[catEntry.appearance] = catNameHashStr;
+
+                        m_replacements.at(catEntry.resourcePath.hash).insert({catEntry.appearance, replacementMap.at(catNameHashStr)});
+                    }
+                }
+                else {
+                    auto innerNameMap = std::unordered_map<RED4ext::CName, std::string>();
+                    innerNameMap.insert({catEntry.appearance, catNameHashStr});
+                    addedCategories.insert({catEntry.resourcePath.hash, innerNameMap});
+
+                    auto innerRepMap = std::unordered_map<RED4ext::CName, std::shared_ptr<Replacements>>();
+                    innerRepMap.insert({catEntry.appearance, replacementMap.at(catNameHashStr)});
+                    m_replacements.insert({catEntry.resourcePath.hash, innerRepMap});
+                }
+            }
+        }
+
+        RedLogger::Debug("Loaded Categories. Recalculating weights...");
+
+        for (auto &val : m_replacements | std::views::values) {
+            if (!val.contains(g_anyAppearance) && !val.empty()) {
+                auto anyRep = std::make_shared<Replacements>();
+                anyRep->weights = std::make_unique<std::vector<float>>();
+                anyRep->appNames = std::make_unique<std::vector<RED4ext::CName>>();
+                anyRep->resourcePaths = std::make_unique<std::vector<RED4ext::ResourcePath>>();
+
+                anyRep->weights->push_back(0);
+
+                val.insert({g_anyAppearance, anyRep});
+            }
+        }
+
+        for (auto it = m_replacements.begin(); it != m_replacements.end(); ) {
+            if (it->second.empty()) {
+                it = m_replacements.erase(it);
+            } else {
+                ++it;
+            }
+        }
+
+        RedLogger::Debug("Finished Loading");
     }
 
     std::unordered_map<std::string, Category> InfiniteRandomizerFrameworkNative::LoadCategoriesFromDisk() {
         const auto categoryDir = std::filesystem::current_path().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\categories)";
         auto parsedCategories = std::unordered_map<std::string, Category>();
+
+        std::size_t count = std::distance(
+            fs::directory_iterator(categoryDir),
+            fs::directory_iterator{}
+        );
+
+        RedLogger::Debug("Found " + std::to_string(count) + " categories");
 
         try
         {
@@ -108,7 +242,7 @@ namespace InfiniteRandomizerFramework
             }
 
             auto entries = doc["entries"].GetArray();
-            auto i = 0;
+            auto i = 0; // TODO: REWORK INDEXING
             for (const auto& entry : entries) {
                 if (!entry.IsObject()) {
                     RedLogger::Error(std::format("Category entry {} in {} is malformed: root is not of type object.", i, entryPath));
@@ -120,7 +254,7 @@ namespace InfiniteRandomizerFramework
                     continue;
                 }
 
-                if (!doc["resourcePath"].IsString()) {
+                if (!entry["resourcePath"].IsString()) {
                     RedLogger::Error(std::format("Category entry {} in {} is malformed: property `resourcePath` is not of type string.", i, entryPath));
                     continue;
                 }
@@ -142,8 +276,8 @@ namespace InfiniteRandomizerFramework
                 catEntry.resourcePath = redResourcePath;
 
                 if (entry.HasMember("appearance")) {
-                    if (doc["appearance"].IsString()) {
-                        catEntry.appearance = doc["appearance"].GetString();
+                    if (entry["appearance"].IsString()) {
+                        catEntry.appearance = entry["appearance"].GetString();
                     }
                     else {
                         RedLogger::Warning(std::format("Category entry {} in {} is malformed: property `appearance` is not of type string, using default.", i, entryPath));
@@ -177,9 +311,16 @@ namespace InfiniteRandomizerFramework
         return parsedCategories;
     }
 
-    std::unordered_map<std::string, VariantPool> LoadVariantPoolsFromDisk() {
+    std::unordered_map<std::string, VariantPool> InfiniteRandomizerFrameworkNative::LoadVariantPoolsFromDisk() {
         const auto variantPoolDir = std::filesystem::current_path().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\variantPools)";
         std::unordered_map<std::string, VariantPool> parsedPools;
+
+        std::size_t count = std::distance(
+        fs::directory_iterator(variantPoolDir),
+        fs::directory_iterator{}
+        );
+
+        RedLogger::Debug("Found " + std::to_string(count) + " categories");
 
         try
         {
@@ -270,13 +411,16 @@ namespace InfiniteRandomizerFramework
                     continue;
                 }
 
-                if (!doc["resourcePath"].IsString()) {
+                if (!entry["resourcePath"].IsString()) {
                     RedLogger::Error(std::format("Variant pool entry {} in {} is malformed: property `resourcePath` is not of type string.", i, entryPath));
                     continue;
                 }
 
                 const auto resourcePathString = entry["resourcePath"].GetString();
+                RedLogger::Debug(resourcePathString);
                 const auto redResourcePath = RED4ext::ResourcePath(resourcePathString);
+                RedLogger::Debug(
+                    std::to_string(m_depot->ResourceExists(redResourcePath)));
                 const auto extension = fs::path(resourcePathString).extension().string();
 
                 if (pool.extension.empty()) {
@@ -292,21 +436,28 @@ namespace InfiniteRandomizerFramework
                 variant.resourcePath = redResourcePath;
 
                 if (entry.HasMember("weight")) {
-                    if (doc["weight"].IsDouble()) {
-                        variant.weight = doc["weight"].GetDouble();
+                    if (entry["weight"].IsNumber()) {
+                        auto weight = entry["weight"].GetFloat();
+                        if (weight <= 0.0f) {
+                            RedLogger::Warning(std::format("Variant pool entry {} in {} is malformed: property `weight` must be bigger than 0, using default.", i, entryPath));
+                            variant.weight = 1.0f;
+                        }
+                        else {
+                            variant.weight = weight;
+                        }
                     }
                     else {
                         RedLogger::Warning(std::format("Variant pool entry {} in {} is malformed: property `weight` is not of type number, using default.", i, entryPath));
-                        variant.weight = 1;
+                        variant.weight = 1.0f;
                     }
                 }
                 else {
-                    variant.weight = 1;
+                    variant.weight = 1.0f;
                 }
 
                 if (entry.HasMember("appearance")) {
-                    if (doc["appearance"].IsString()) {
-                        variant.appearance = doc["appearance"].GetString();
+                    if (entry["appearance"].IsString()) {
+                        variant.appearance = entry["appearance"].GetString();
                     }
                     else {
                         RedLogger::Warning(std::format("Variant pool entry {} in {} is malformed: property `appearance` is not of type string, using default.", i, entryPath));
@@ -316,7 +467,7 @@ namespace InfiniteRandomizerFramework
                 else {
                     variant.appearance = "default";
                 }
-
+                RedLogger::Debug(variant.appearance);
                 pool.entries.push_back(variant);
             }
 

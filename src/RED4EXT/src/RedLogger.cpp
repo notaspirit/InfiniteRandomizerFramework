@@ -16,9 +16,9 @@ namespace InfiniteRandomizerFramework {
     }
 
     void RedLogger::Debug(const std::string& message) {
-        if (!g_isDebug) {
+        if constexpr (!g_isDebug) {
             return;
         }
-        g_sdk->logger->Debug(g_pHandle, message.c_str());
+        g_sdk->logger->Info(g_pHandle, message.c_str());
     }
 }

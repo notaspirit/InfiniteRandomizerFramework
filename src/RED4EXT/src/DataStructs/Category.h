@@ -1,13 +1,15 @@
 #pragma once
 
 #include <vector>
+
+#include "RED4ext/CName.hpp"
 #include "RED4ext/ResourcePath.hpp"
 
 namespace InfiniteRandomizerFramework {
 
     struct CategoryEntry {
         RED4ext::ResourcePath resourcePath;
-        std::string appearance;
+        RED4ext::CName appearance;
     };
 
     struct Category {
