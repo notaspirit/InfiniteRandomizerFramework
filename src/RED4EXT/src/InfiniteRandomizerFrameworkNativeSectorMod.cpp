@@ -71,9 +71,9 @@ void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *a
         {
             const auto meshNode = Red::Cast<RED4ext::worldMeshNode>(node);
 
-            if (!m_replacements.contains(meshNode->mesh.path)) {
-                continue;
-            }
+             if (!m_replacements.contains(meshNode->mesh.path)) {
+                 continue;
+             }
             
             auto replacementValues = GetRandomEntry(meshNode->mesh.path, meshNode->meshAppearance);
             meshNode->mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementValues._Myfirst._Val);

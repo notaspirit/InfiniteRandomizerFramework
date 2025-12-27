@@ -99,6 +99,16 @@ namespace InfiniteRandomizerFramework
             }
         }
 
+        int failed = 0;
+        for (auto &val : replacementMap | std::views::values) {
+            for (auto rs : *val->resourcePaths) {
+                if (!m_depot->ResourceExists(rs)) {
+                    failed++;
+                }
+            }
+        }
+        RedLogger::Debug(std::format("{} resource paths are invalid in replacementMap", failed));
+
         RedLogger::Debug("Loaded Variant Pools. Loading Categories...");
 
         std::unordered_map<uint64_t, std::unordered_map<RED4ext::CName, std::string>> addedCategories;
@@ -153,9 +163,30 @@ namespace InfiniteRandomizerFramework
             }
         }
 
+        int failedFinal = 0;
+        for (auto &val : m_replacements | std::views::values) {
+            for (auto &valInner : val | std::views::values) {
+                for (auto &rs : *valInner->resourcePaths) {
+                    if (!m_depot->ResourceExists(rs)) {
+                        failedFinal++;
+                    }
+                }
+            }
+        }
+        RedLogger::Debug(std::format("{} resource paths are invalid in final replacements", failedFinal));
+
         RedLogger::Debug("Loaded Categories. Recalculating weights...");
 
         for (auto &val : m_replacements | std::views::values) {
+            for (auto &valInner : val | std::views::values) {
+                if (valInner->weights->size() < 3)
+                    continue;
+
+                for (int i = 2; i < valInner->weights->size(); i++) {
+                    valInner->weights->at(i) += valInner->weights->at(i - 1);
+                }
+            }
+
             if (!val.contains(g_anyAppearance) && !val.empty()) {
                 auto anyRep = std::make_shared<Replacements>();
                 anyRep->weights = std::make_unique<std::vector<float>>();
@@ -468,6 +499,8 @@ namespace InfiniteRandomizerFramework
                     variant.appearance = "default";
                 }
                 RedLogger::Debug(variant.appearance);
+                RedLogger::Debug(
+                    std::to_string(m_depot->ResourceExists(variant.resourcePath)));
                 pool.entries.push_back(variant);
             }
 
