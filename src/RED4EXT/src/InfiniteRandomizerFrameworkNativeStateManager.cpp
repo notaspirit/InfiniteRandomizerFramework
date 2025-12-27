@@ -33,23 +33,6 @@ namespace InfiniteRandomizerFramework
         m_rng = FastRNG();
         m_rng.state = std::chrono::system_clock::now().time_since_epoch().count();
 
-        /*
-        int testSize = 10000;
-        int max = 100;
-        std::vector<int> testResults(max);
-        for (int i = 0; i < testSize; i++)
-        {
-            testResults[m_rng.getInt32(max, 0)]++;
-        }
-
-        std::string csv = "Value, Frequency\n";
-        for (int i = 0; i < max; i++) {
-            csv += std::format("{},{}\n", i, (float)testResults[i] / (float)testSize);
-        }
-
-        RedLogger::Debug(csv);
-        */
-
         LoadFromDiskInternal();
 
         m_initialized = true;
