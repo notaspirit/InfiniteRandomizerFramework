@@ -9,10 +9,6 @@ function gui.draw()
         if ImGui.Button("Reload From Disk") then
             stateManager.load()
         end
-        ImGui.SameLine()
-        if ImGui.Button("Print State") then
-            logger.info(jsonUtils.TableToJSON(IRF), true)
-        end
         ImGui.Separator()
 
         if (ImGui.BeginTable("Variant Pools", 4,  ImGuiTableFlags.SizingFixedFit)) then
@@ -26,11 +22,13 @@ function gui.draw()
                 local poolObj = IRF.rawPools[k]
                 ImGui.TableNextRow()
                 ImGui.TableSetColumnIndex(0)
-                if ImGui.Button((poolObj.enabled and "[X]" or "[  ]") .. "##" .. tostring(poolObj.name)) then
-                    poolObj.enabled = not poolObj.enabled
-                    stateManager.refreshEnabledPools()
-                    stateManager.saveRawPool(poolObj.name)
+                poolObj.enabled, changed = ImGui.Checkbox("##" .. tostring(poolObj.name), poolObj.enabled)
+                if changed then
+                    table.insert(IRF.poolsToSave, poolObj.name)
+                    IRF.ReloadFromDiskRequested = true
+                    print("Marked " .. tostring(poolObj.name) .. " for saving.")
                 end
+
                 ImGui.TableSetColumnIndex(1)
                 ImGui.Text(poolObj.name)
                 ImGui.TableSetColumnIndex(2)
