@@ -33,6 +33,23 @@ namespace InfiniteRandomizerFramework
         m_rng = FastRNG();
         m_rng.state = std::chrono::system_clock::now().time_since_epoch().count();
 
+        /*
+        int testSize = 10000;
+        int max = 100;
+        std::vector<int> testResults(max);
+        for (int i = 0; i < testSize; i++)
+        {
+            testResults[m_rng.getInt32(max, 0)]++;
+        }
+
+        std::string csv = "Value, Frequency\n";
+        for (int i = 0; i < max; i++) {
+            csv += std::format("{},{}\n", i, (float)testResults[i] / (float)testSize);
+        }
+
+        RedLogger::Debug(csv);
+        */
+
         LoadFromDiskInternal();
 
         m_initialized = true;
@@ -106,6 +123,10 @@ namespace InfiniteRandomizerFramework
                     failed++;
                 }
             }
+
+            for (auto w : *val->weights) {
+                RedLogger::Debug(std::to_string(w));
+            }
         }
         RedLogger::Debug(std::format("{} resource paths are invalid in replacementMap", failed));
 
@@ -164,6 +185,7 @@ namespace InfiniteRandomizerFramework
         }
 
         int failedFinal = 0;
+        RedLogger::Debug("After Merging Cats.");
         for (auto &val : m_replacements | std::views::values) {
             for (auto &valInner : val | std::views::values) {
                 for (auto &rs : *valInner->resourcePaths) {
@@ -171,19 +193,39 @@ namespace InfiniteRandomizerFramework
                         failedFinal++;
                     }
                 }
+
+                for (auto w : *valInner->weights) {
+                    RedLogger::Debug(std::to_string(w));
+                }
             }
         }
         RedLogger::Debug(std::format("{} resource paths are invalid in final replacements", failedFinal));
 
         RedLogger::Debug("Loaded Categories. Recalculating weights...");
 
+        std::unordered_map<uint64_t, bool> processedSharedPtr;
         for (auto &val : m_replacements | std::views::values) {
             for (auto &valInner : val | std::views::values) {
+                if (processedSharedPtr.contains((uint64_t)valInner.get())) {
+                    RedLogger::Debug(std::format("Already Processed {}", (uint64_t)valInner.get()));
+                    continue;
+                }
+
+                processedSharedPtr.insert({(uint64_t)valInner.get(), true});
+
                 if (valInner->weights->size() < 3)
                     continue;
 
-                for (int i = 2; i < valInner->weights->size(); i++) {
+                for (int i = 0; i < valInner->weights->size(); i++) {
+                    RedLogger::Debug(std::format("Before {}: {:.2f}", i, valInner->weights->at(i)));
+                }
+
+                for (int i = 0; i < valInner->weights->size(); i++) {
+                    if (i == 0 || i == 1) {
+                        continue;
+                    }
                     valInner->weights->at(i) += valInner->weights->at(i - 1);
+                    RedLogger::Debug(std::format("After {}: {:.2f}", i, valInner->weights->at(i)));
                 }
             }
 
