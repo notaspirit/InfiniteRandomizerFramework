@@ -116,20 +116,6 @@ namespace InfiniteRandomizerFramework
             }
         }
 
-        int failed = 0;
-        for (auto &val : replacementMap | std::views::values) {
-            for (auto rs : *val->resourcePaths) {
-                if (!m_depot->ResourceExists(rs)) {
-                    failed++;
-                }
-            }
-
-            for (auto w : *val->weights) {
-                RedLogger::Debug(std::to_string(w));
-            }
-        }
-        RedLogger::Debug(std::format("{} resource paths are invalid in replacementMap", failed));
-
         RedLogger::Debug("Loaded Variant Pools. Loading Categories...");
 
         std::unordered_map<uint64_t, std::unordered_map<RED4ext::CName, std::string>> addedCategories;
@@ -184,30 +170,10 @@ namespace InfiniteRandomizerFramework
             }
         }
 
-        int failedFinal = 0;
-        RedLogger::Debug("After Merging Cats.");
-        for (auto &val : m_replacements | std::views::values) {
-            for (auto &valInner : val | std::views::values) {
-                for (auto &rs : *valInner->resourcePaths) {
-                    if (!m_depot->ResourceExists(rs)) {
-                        failedFinal++;
-                    }
-                }
-
-                for (auto w : *valInner->weights) {
-                    RedLogger::Debug(std::to_string(w));
-                }
-            }
-        }
-        RedLogger::Debug(std::format("{} resource paths are invalid in final replacements", failedFinal));
-
-        RedLogger::Debug("Loaded Categories. Recalculating weights...");
-
         std::unordered_map<uint64_t, bool> processedSharedPtr;
         for (auto &val : m_replacements | std::views::values) {
             for (auto &valInner : val | std::views::values) {
                 if (processedSharedPtr.contains((uint64_t)valInner.get())) {
-                    RedLogger::Debug(std::format("Already Processed {}", (uint64_t)valInner.get()));
                     continue;
                 }
 
@@ -217,15 +183,10 @@ namespace InfiniteRandomizerFramework
                     continue;
 
                 for (int i = 0; i < valInner->weights->size(); i++) {
-                    RedLogger::Debug(std::format("Before {}: {:.2f}", i, valInner->weights->at(i)));
-                }
-
-                for (int i = 0; i < valInner->weights->size(); i++) {
                     if (i == 0 || i == 1) {
                         continue;
                     }
                     valInner->weights->at(i) += valInner->weights->at(i - 1);
-                    RedLogger::Debug(std::format("After {}: {:.2f}", i, valInner->weights->at(i)));
                 }
             }
 
@@ -268,6 +229,7 @@ namespace InfiniteRandomizerFramework
         for (const auto& categoryFile : fs::directory_iterator(categoryDir))
         {
             auto entryPath = categoryFile.path().string();
+            auto displayPath = categoryFile.path().filename().string();
             if (!entryPath.ends_with(".json") || !categoryFile.is_regular_file())
             {
                 continue;
@@ -282,53 +244,55 @@ namespace InfiniteRandomizerFramework
             buffer << fileStream.rdbuf();
             doc.Parse(buffer.str().c_str());
 
+            RedLogger::Info(std::format("Loading category {}", displayPath));
+
             if (doc.HasParseError()) {
-                RedLogger::Error(std::format("Failed to parse category file {} with error {}.", entryPath, rapidjson::GetParseError_En(doc.GetParseError())));
+                RedLogger::Error(std::format("Failed to parse category file with error {}.", rapidjson::GetParseError_En(doc.GetParseError())));
                 continue;
             }
 
             if (!doc.IsObject()) {
-                RedLogger::Error(std::format("Category file {} is malformed: root is not of type object.", entryPath));
+                RedLogger::Error("Category file is malformed: root is not of type object.");
                 continue;
             }
 
             if (!doc.HasMember("name")) {
-                RedLogger::Error(std::format("Category file {} is malformed: missing property `name`.", entryPath));
+                RedLogger::Error("Category file is malformed: missing property `name`.");
                 continue;
             }
 
             if (!doc["name"].IsString()) {
-                RedLogger::Error(std::format("Category file {} is malformed: property `name` is not of type string.", entryPath));
+                RedLogger::Error("Category file is malformed: property `name` is not of type string.");
                 continue;
             }
 
             name = doc["name"].GetString();
 
             if (!doc.HasMember("entries")) {
-                RedLogger::Error(std::format("Category file {} is malformed: missing property `entries`.", entryPath));
+                RedLogger::Error("Category file is malformed: missing property `entries`.");
                 continue;
             }
 
             if (!doc["entries"].IsArray()) {
-                RedLogger::Error(std::format("Category file {} is malformed: property `entries` is not of type array.", entryPath));
+                RedLogger::Error("Category file is malformed: property `entries` is not of type array.");
                 continue;
             }
 
             auto entries = doc["entries"].GetArray();
-            auto i = 0; // TODO: REWORK INDEXING
+            auto i = 0;
             for (const auto& entry : entries) {
                 if (!entry.IsObject()) {
-                    RedLogger::Error(std::format("Category entry {} in {} is malformed: root is not of type object.", i, entryPath));
+                    RedLogger::Warning(std::format("Category entry at {} is malformed: root is not of type object.", i));
                     continue;
                 }
 
                 if (!entry.HasMember("resourcePath")) {
-                    RedLogger::Error(std::format("Category entry {} in {} is malformed: missing property `resourcePath`.", i, entryPath));
+                    RedLogger::Warning(std::format("Category entry at {} is malformed: missing property `resourcePath`.", i));
                     continue;
                 }
 
                 if (!entry["resourcePath"].IsString()) {
-                    RedLogger::Error(std::format("Category entry {} in {} is malformed: property `resourcePath` is not of type string.", i, entryPath));
+                    RedLogger::Warning(std::format("Category entry at {} is malformed: property `resourcePath` is not of type string.", i));
                     continue;
                 }
 
@@ -341,7 +305,7 @@ namespace InfiniteRandomizerFramework
                 }
 
                 if (category.extension != extension) {
-                    RedLogger::Error(std::format("Category file {} is malformed: entries contains mixed resource types", entryPath));
+                    RedLogger::Error("Category file is malformed: entries contains mixed resource types");
                     goto breakCatLoop;
                 }
 
@@ -353,7 +317,7 @@ namespace InfiniteRandomizerFramework
                         catEntry.appearance = entry["appearance"].GetString();
                     }
                     else {
-                        RedLogger::Warning(std::format("Category entry {} in {} is malformed: property `appearance` is not of type string, using default.", i, entryPath));
+                        RedLogger::Warning(std::format("Category entry at {} is malformed: property `appearance` is not of type string, using default.", i));
                         catEntry.appearance = g_anyAppearance;
                     }
                 }
@@ -367,7 +331,7 @@ namespace InfiniteRandomizerFramework
             }
 
             if (parsedCategories.contains(name)) {
-                RedLogger::Error(std::format("Failed to load category {} at {}: category with conflicting name exists.", name, entryPath));
+                RedLogger::Error("Failed to load category: category with conflicting name exists.");
             }
             else {
                 parsedCategories[name] = category;
@@ -393,12 +357,13 @@ namespace InfiniteRandomizerFramework
         fs::directory_iterator{}
         );
 
-        RedLogger::Debug("Found " + std::to_string(count) + " categories");
+        RedLogger::Debug("Found " + std::to_string(count) + " variant pools");
 
         try
         {
         for (const auto& poolFile : fs::directory_iterator(variantPoolDir)) {
             auto entryPath = poolFile.path().string();
+            auto displayPath = poolFile.path().filename().string();
             if (!entryPath.ends_with(".json") || !poolFile.is_regular_file())
             {
                 continue;
@@ -413,61 +378,64 @@ namespace InfiniteRandomizerFramework
             buffer << fileStream.rdbuf();
             doc.Parse(buffer.str().c_str());
 
+            RedLogger::Info(std::format("Loading variant pool {}", displayPath));
+
             if (doc.HasParseError()) {
-                RedLogger::Error(std::format("Failed to parse variant pool file {} with error {}.", entryPath, rapidjson::GetParseError_En(doc.GetParseError())));
+                RedLogger::Error(std::format("Failed to parse variant pool file with error {}.", rapidjson::GetParseError_En(doc.GetParseError())));
                 continue;
             }
 
             if (!doc.IsObject()) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: root is not of type object.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: root is not of type object.");
                 continue;
             }
 
             if (!doc.HasMember("enabled")) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: missing property `enabled`.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: missing property `enabled`.");
                 continue;
             }
 
             if (!doc["enabled"].IsBool()) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: property `enabled` is not of type bool.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: property `enabled` is not of type bool.");
                 continue;
             }
 
             if (!doc["enabled"].GetBool()) {
+                RedLogger::Info("Variant pool is disabled.");
                 continue;
             }
 
             if (!doc.HasMember("name")) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: missing property `name`.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: missing property `name`.");
                 continue;
             }
 
             if (!doc["name"].IsString()) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: property `name` is not of type string.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: property `name` is not of type string.");
                 continue;
             }
 
             name = doc["name"].GetString();
 
             if (!doc.HasMember("category")) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: missing property `category`.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: missing property `category`.");
                 continue;
             }
 
             if (!doc["category"].IsString()) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: property `category` is not of type string.", entryPath));
+                RedLogger::Error("Variant pool files is malformed: property `category` is not of type string.");
                 continue;
             }
 
             pool.category = doc["category"].GetString();
 
             if (!doc.HasMember("variants")) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: missing property `variants`.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: missing property `variants`.");
                 continue;
             }
 
             if (!doc["variants"].IsArray()) {
-                RedLogger::Error(std::format("Variant pool file {} is malformed: property `variants` is not of type array.", entryPath));
+                RedLogger::Error("Variant pool file is malformed: property `variants` is not of type array.");
                 continue;
             }
 
@@ -475,25 +443,26 @@ namespace InfiniteRandomizerFramework
             auto i = 0;
             for (const auto& entry : variantArray) {
                 if (!entry.IsObject()) {
-                    RedLogger::Error(std::format("Variant pool entry {} in {} is malformed: root is not of type object.", i, entryPath));
+                    RedLogger::Error(std::format("Variant pool entry at {} is malformed: root is not of type object.", i));
                     continue;
                 }
 
                 if (!entry.HasMember("resourcePath")) {
-                    RedLogger::Error(std::format("Variant pool entry {} in {} is malformed: missing property `resourcePath`.", i, entryPath));
+                    RedLogger::Error(std::format("Variant pool entry at {} is malformed: missing property `resourcePath`.", i));
                     continue;
                 }
 
                 if (!entry["resourcePath"].IsString()) {
-                    RedLogger::Error(std::format("Variant pool entry {} in {} is malformed: property `resourcePath` is not of type string.", i, entryPath));
+                    RedLogger::Error(std::format("Variant pool entry at {} is malformed: property `resourcePath` is not of type string.", i));
                     continue;
                 }
 
                 const auto resourcePathString = entry["resourcePath"].GetString();
-                RedLogger::Debug(resourcePathString);
                 const auto redResourcePath = RED4ext::ResourcePath(resourcePathString);
-                RedLogger::Debug(
-                    std::to_string(m_depot->ResourceExists(redResourcePath)));
+                if (!m_depot->ResourceExists(redResourcePath)) {
+                    RedLogger::Error(std::format("Variant pool entry at {} is invalid: property `resourcePath` does not point to a valid resource.", i));
+                    continue;
+                }
                 const auto extension = fs::path(resourcePathString).extension().string();
 
                 if (pool.extension.empty()) {
@@ -501,7 +470,7 @@ namespace InfiniteRandomizerFramework
                 }
 
                 if (pool.extension != extension) {
-                    RedLogger::Error(std::format("Category file {} is malformed: entries contains mixed resource types", entryPath));
+                    RedLogger::Error("Category file is malformed: entries contains mixed resource types");
                     goto breakPoolLoop;
                 }
 
@@ -512,7 +481,7 @@ namespace InfiniteRandomizerFramework
                     if (entry["weight"].IsNumber()) {
                         auto weight = entry["weight"].GetFloat();
                         if (weight <= 0.0f) {
-                            RedLogger::Warning(std::format("Variant pool entry {} in {} is malformed: property `weight` must be bigger than 0, using default.", i, entryPath));
+                            RedLogger::Warning(std::format("Variant pool entry at {} is malformed: property `weight` must be bigger than 0, using default.", i));
                             variant.weight = 1.0f;
                         }
                         else {
@@ -520,7 +489,7 @@ namespace InfiniteRandomizerFramework
                         }
                     }
                     else {
-                        RedLogger::Warning(std::format("Variant pool entry {} in {} is malformed: property `weight` is not of type number, using default.", i, entryPath));
+                        RedLogger::Warning(std::format("Variant pool entry at {} is malformed: property `weight` is not of type number, using default.", i));
                         variant.weight = 1.0f;
                     }
                 }
@@ -533,21 +502,18 @@ namespace InfiniteRandomizerFramework
                         variant.appearance = entry["appearance"].GetString();
                     }
                     else {
-                        RedLogger::Warning(std::format("Variant pool entry {} in {} is malformed: property `appearance` is not of type string, using default.", i, entryPath));
+                        RedLogger::Warning(std::format("Variant pool entry at {} is malformed: property `appearance` is not of type string, using default.", i));
                         variant.appearance = "default";
                     }
                 }
                 else {
                     variant.appearance = "default";
                 }
-                RedLogger::Debug(variant.appearance);
-                RedLogger::Debug(
-                    std::to_string(m_depot->ResourceExists(variant.resourcePath)));
                 pool.entries.push_back(variant);
             }
 
             if (parsedPools.contains(name)) {
-                RedLogger::Error(std::format("Failed to load variant pool {} at {}: variant pool with conflicting name exists.", name, entryPath));
+                RedLogger::Error("Failed to load variant pool: variant pool with conflicting name exists.");
             }
             else {
                 parsedPools[name] = pool;

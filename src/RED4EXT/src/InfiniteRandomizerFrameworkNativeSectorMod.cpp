@@ -35,9 +35,7 @@ InfiniteRandomizerFrameworkNative::GetRandomEntry(
                                                appReplacements->weights->at(0));
 
         for (auto i = 1; i < appReplacements->weights->size(); i++) {
-            // RedLogger::Debug(std::format("Checking random weight {} against entry weight {}", randWeight, appReplacements->weights->at(i)));
             if (randWeight <= appReplacements->weights->at(i)) {
-                // RedLogger::Debug(std::format("Returning value at {}/{}", i, appReplacements->weights->size()));
                 return std::tuple(appReplacements->resourcePaths->at(i - 1),
                     appReplacements->appNames->at(i - 1));
             }
@@ -48,9 +46,7 @@ InfiniteRandomizerFrameworkNative::GetRandomEntry(
     }
 
     for (auto i = 1; i < anyReplacements->weights->size(); i++) {
-        // RedLogger::Debug(std::format("Checking random weight {} against entry weight {}", randWeight, anyReplacements->weights->at(i)));
         if (randWeight <= anyReplacements->weights->at(i)) {
-            // RedLogger::Debug(std::format("Returning value at {}/{}", i, anyReplacements->weights->size()));
             return std::tuple(anyReplacements->resourcePaths->at(i - 1),
                               anyReplacements->appNames->at(i - 1));
         }
