@@ -262,8 +262,9 @@ namespace InfiniteRandomizerFramework
             }
 
             auto entries = doc["entries"].GetArray();
-            auto i = 0;
+            auto i = -1;
             for (const auto& entry : entries) {
+                i++;
                 if (!entry.IsObject()) {
                     RedLogger::Warning(std::format("Category entry at {} is malformed: root is not of type object.", i));
                     continue;
@@ -309,8 +310,6 @@ namespace InfiniteRandomizerFramework
                 }
 
                 category.entries.push_back(catEntry);
-
-                i++;
             }
 
             if (parsedCategories.contains(name)) {
@@ -423,8 +422,9 @@ namespace InfiniteRandomizerFramework
             }
 
             auto variantArray = doc["variants"].GetArray();
-            auto i = 0;
+            auto i = -1;
             for (const auto& entry : variantArray) {
+                i++;
                 if (!entry.IsObject()) {
                     RedLogger::Error(std::format("Variant pool entry at {} is malformed: root is not of type object.", i));
                     continue;
