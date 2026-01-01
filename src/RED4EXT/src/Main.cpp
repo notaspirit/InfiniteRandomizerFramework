@@ -41,6 +41,12 @@ namespace InfiniteRandomizerFramework
             &InfiniteRandomizerFrameworkNative::Initialize, {.isNative = true, .isStatic = true});
 
         customControllerClass.RegisterFunction(initialize);
+
+        const auto loadFromDisk =
+            RED4ext::CClassStaticFunction::Create(&customControllerClass, "LoadFromDisk", "LoadFromDisk",
+            &InfiniteRandomizerFrameworkNative::LoadFromDisk, {.isNative = true, .isStatic = true});
+
+        customControllerClass.RegisterFunction(loadFromDisk);
     }
 
     RED4EXT_C_EXPORT bool RED4EXT_CALL Main(RED4ext::PluginHandle aHandle, RED4ext::EMainReason aReason, const RED4ext::Sdk* aSdk)
@@ -71,8 +77,8 @@ namespace InfiniteRandomizerFramework
     {
         aInfo->name = L"InfiniteRandomizerFrameworkNative";
         aInfo->author = L"sprt_";
-        aInfo->version = RED4EXT_SEMVER(1, 0, 0);
-        aInfo->runtime = RED4EXT_RUNTIME_LATEST;
+        aInfo->version = RED4EXT_SEMVER(1, 1, 0);
+        aInfo->runtime = RED4EXT_RUNTIME_INDEPENDENT;
         aInfo->sdk = RED4EXT_SDK_LATEST;
     }
 
