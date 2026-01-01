@@ -54,13 +54,11 @@ registerForEvent("onUpdate", function()
     end
 
     if (#IRF.poolsToSave > 0) then
-        print("Saving pool: " .. tostring(IRF.poolsToSave[#IRF.poolsToSave]))
         stateManager.saveRawPool(IRF.poolsToSave[#IRF.poolsToSave])
         table.remove(IRF.poolsToSave)
     end
 
     if IRF.ReloadFromDiskRequested and #IRF.poolsToSave == 0 then
-        print("Reloading from disk...")
         IRF.ReloadFromDiskRequested = false
         InfiniteRandomizerFrameworkNative.LoadFromDisk()
     end

@@ -26,7 +26,6 @@ function gui.draw()
                 if changed then
                     table.insert(IRF.poolsToSave, poolObj.name)
                     IRF.ReloadFromDiskRequested = true
-                    print("Marked " .. tostring(poolObj.name) .. " for saving.")
                 end
 
                 ImGui.TableSetColumnIndex(1)
