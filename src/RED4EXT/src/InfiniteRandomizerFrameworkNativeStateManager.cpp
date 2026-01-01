@@ -36,6 +36,7 @@ namespace InfiniteRandomizerFramework
         LoadFromDiskInternal();
 
         m_initialized = true;
+        RedLogger::Info("Initialized InfiniteRandomizerFramework Native");
     }
 
     void InfiniteRandomizerFrameworkNative::LoadFromDisk(RED4ext::IScriptable* aContext, RED4ext::CStackFrame* aFrame, RED4ext::CString* aOut, int64_t a4)
@@ -46,20 +47,20 @@ namespace InfiniteRandomizerFramework
 
     void InfiniteRandomizerFrameworkNative::LoadFromDiskInternal()
     {
-        RedLogger::Debug("Loading State From Disk");
+        RedLogger::Info("Loading State From Disk...");
 
         m_replacements.clear();
 
         auto categories = LoadCategoriesFromDisk();
         auto variantPools = LoadVariantPoolsFromDisk();
 
-        RedLogger::Debug("Loaded " + std::to_string(categories.size()) + " categories from disk");
-        RedLogger::Debug("Loaded " + std::to_string(variantPools.size()) + " pools from disk");
+        RedLogger::Info(std::format("Parsed {} categories", categories.size()));
+        RedLogger::Info(std::format("Parsed {} variant pools", variantPools.size()));
 
         // string represents the xxhash64 as a list of all categories that the given replacement contains, separated via a _
         std::unordered_map<std::string, std::shared_ptr<Replacements>> replacementMap;
 
-        RedLogger::Debug("Parsed Categories and Variant Pools. Loading Variant Pools...");
+        RedLogger::Info("Loading Variant Pools...");
 
         for (const auto& pool : variantPools) {
             if (!categories.contains(pool.second.category)) {
@@ -99,7 +100,7 @@ namespace InfiniteRandomizerFramework
             }
         }
 
-        RedLogger::Debug("Loaded Variant Pools. Loading Categories...");
+        RedLogger::Info("Loading Categories...");
 
         std::unordered_map<uint64_t, std::unordered_map<RED4ext::CName, std::string>> addedCategories;
 
@@ -156,21 +157,16 @@ namespace InfiniteRandomizerFramework
         std::unordered_map<uint64_t, bool> processedSharedPtr;
         for (auto &val : m_replacements | std::views::values) {
             for (auto &valInner : val | std::views::values) {
-                if (processedSharedPtr.contains((uint64_t)valInner.get())) {
+                if (processedSharedPtr.contains((uint64_t)valInner.get()))
                     continue;
-                }
 
                 processedSharedPtr.insert({(uint64_t)valInner.get(), true});
 
                 if (valInner->weights->size() < 3)
                     continue;
 
-                for (int i = 0; i < valInner->weights->size(); i++) {
-                    if (i == 0 || i == 1) {
-                        continue;
-                    }
+                for (int i = 2; i < valInner->weights->size(); i++)
                     valInner->weights->at(i) += valInner->weights->at(i - 1);
-                }
             }
 
             if (!val.contains(g_anyAppearance) && !val.empty()) {
@@ -193,7 +189,7 @@ namespace InfiniteRandomizerFramework
             }
         }
 
-        RedLogger::Debug("Finished Loading");
+        RedLogger::Info("Finished Loading");
     }
 
     std::unordered_map<std::string, Category> InfiniteRandomizerFrameworkNative::LoadCategoriesFromDisk() {
@@ -205,7 +201,7 @@ namespace InfiniteRandomizerFramework
             fs::directory_iterator{}
         );
 
-        RedLogger::Debug("Found " + std::to_string(count) + " categories");
+        RedLogger::Info(std::format("Found {} category files", count));
 
         try
         {
@@ -339,7 +335,7 @@ namespace InfiniteRandomizerFramework
         fs::directory_iterator{}
         );
 
-        RedLogger::Debug("Found " + std::to_string(count) + " variant pools");
+        RedLogger::Info(std::format("Found {} variant pool files", count));
 
         try
         {
