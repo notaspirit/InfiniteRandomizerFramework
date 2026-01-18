@@ -192,8 +192,26 @@ namespace InfiniteRandomizerFramework
         RedLogger::Info("Finished Loading");
     }
 
+    std::filesystem::path GetExeDir() {
+        wchar_t buffer[MAX_PATH + 1];
+
+        DWORD len = GetModuleFileNameW(nullptr, buffer, MAX_PATH);
+        if (len == ERROR_INSUFFICIENT_BUFFER)
+            throw ERROR_INSUFFICIENT_BUFFER;
+
+        return std::filesystem::path(buffer).parent_path();
+    }
+
     std::unordered_map<std::string, Category> InfiniteRandomizerFrameworkNative::LoadCategoriesFromDisk() {
-        const auto categoryDir = std::filesystem::current_path().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\categories)";
+        std::string categoryDir;
+        try {
+            categoryDir = GetExeDir().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\categories)";
+        }
+        catch (const std::exception& e) {
+            RedLogger::Error(std::format("Failed to get executable directory. Cannot load Categories."));
+            return {};
+        }
+
         auto parsedCategories = std::unordered_map<std::string, Category>();
 
         std::size_t count = std::distance(
@@ -327,7 +345,15 @@ namespace InfiniteRandomizerFramework
     }
 
     std::unordered_map<std::string, VariantPool> InfiniteRandomizerFrameworkNative::LoadVariantPoolsFromDisk() {
-        const auto variantPoolDir = std::filesystem::current_path().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\variantPools)";
+        std::string variantPoolDir;
+        try {
+            variantPoolDir = GetExeDir().string() + R"(\plugins\cyber_engine_tweaks\mods\InfiniteRandomizerFramework\data\variantPools)";
+        }
+        catch (const std::exception& e) {
+            RedLogger::Error(std::format("Failed to get executable directory. Cannot load Variant Pools."));
+            return {};
+        }
+
         std::unordered_map<std::string, VariantPool> parsedPools;
 
         std::size_t count = std::distance(
