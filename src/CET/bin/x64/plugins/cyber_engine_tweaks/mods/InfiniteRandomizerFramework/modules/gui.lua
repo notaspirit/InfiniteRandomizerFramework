@@ -24,8 +24,8 @@ function gui.draw()
                 ImGui.TableSetColumnIndex(0)
                 poolObj.enabled, changed = ImGui.Checkbox("##" .. tostring(poolObj.name), poolObj.enabled)
                 if changed then
-                    table.insert(IRF.poolsToSave, poolObj.name)
-                    IRF.ReloadFromDiskRequested = true
+                    stateManager.saveRawPool(poolObj.name)
+                    InfiniteRandomizerFrameworkNative.LoadFromDisk()
                 end
 
                 ImGui.TableSetColumnIndex(1)

@@ -30,7 +30,6 @@ namespace InfiniteRandomizerFramework
         m_depot = RED4ext::ResourceDepot::Get();
         m_rttis = RED4ext::CRTTISystem::Get();
 
-        m_rng = FastRNG();
         m_rng.state = std::chrono::system_clock::now().time_since_epoch().count();
 
         LoadFromDiskInternal();

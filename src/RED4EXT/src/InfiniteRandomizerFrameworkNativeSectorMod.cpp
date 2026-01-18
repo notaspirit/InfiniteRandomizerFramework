@@ -23,9 +23,9 @@ InfiniteRandomizerFrameworkNative::GetRandomEntry(
     const RED4ext::ResourcePath &resourcePath,
     const RED4ext::CName &appearance) {
 
-    const auto replacement = m_replacements.at(resourcePath);
+    const auto& replacement = m_replacements.at(resourcePath);
 
-    auto& anyReplacements = replacement.at(g_anyAppearance);
+    const auto& anyReplacements = replacement.at(g_anyAppearance);
     float randWeight;
 
     if (replacement.contains(appearance)) {
