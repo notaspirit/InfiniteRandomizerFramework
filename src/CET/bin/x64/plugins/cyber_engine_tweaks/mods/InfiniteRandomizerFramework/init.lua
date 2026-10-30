@@ -1,5 +1,5 @@
 --- Infinite Randomizer Framework (IRF) for Cyber Engine Tweaks
---- Version 1.1.0
+--- Version 1.1.1
 --- Author: sprt_
 
 local stateManager = require("modules/stateManager")
@@ -14,7 +14,7 @@ local utils = require("modules/utils")
 ---@field sortedRawPoolKeys table<string>
 ---@field OverlayOpen boolean
 IRF = {
-    version = "1.1.0",
+    version = "1.1.1",
     rawPools = {},
     rawPoolPathLookup = {},
     sortedRawPoolKeys = {},
