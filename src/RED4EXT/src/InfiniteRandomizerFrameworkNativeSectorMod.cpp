@@ -3,7 +3,6 @@
 #include "InfiniteRandomizerFrameworkNative.h"
 
 #include "DataStructs/Globals.h"
-#include "DataStructs/StreamingSectorNodeBuffer.h"
 #include "RED4ext/Scripting/Natives/Generated/world/BendedMeshNode.hpp"
 #include "RED4ext/Scripting/Natives/Generated/world/EntityNode.hpp"
 #include "RED4ext/Scripting/Natives/Generated/world/FoliageNode.hpp"
