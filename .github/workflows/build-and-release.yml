@@ -1,0 +1,101 @@
+name: Build and package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to use for the draft release (e.g. v1.2.0)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build native plugin and package
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate tag
+        shell: pwsh
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          if ($env:TAG -notmatch '^[A-Za-z0-9._+\-]+$') {
+            throw "Invalid tag '$env:TAG'. Only letters, digits, '.', '_', '+', and '-' are allowed."
+          }
+
+      - name: Configure CMake (Release)
+        run: >
+          cmake -S src/RED4EXT -B build
+          -A x64
+          -DCMAKE_CONFIGURATION_TYPES=Release
+          -DIRF_COPY_TO_GAME=OFF
+
+      - name: Build native plugin (Release)
+        run: cmake --build build --config Release --target InfiniteRandomizerFrameworkNative --parallel
+
+      - name: Stage package contents
+        shell: pwsh
+        run: |
+          $stage = "stage"
+          if (Test-Path $stage) { Remove-Item -Recurse -Force $stage }
+          New-Item -ItemType Directory -Force -Path $stage | Out-Null
+
+          # CET (Lua) and REDscript files go straight into the archive root.
+          Copy-Item -Path "src/CET/*" -Destination $stage -Recurse -Force
+          Copy-Item -Path "src/REDSCRIPT/*" -Destination $stage -Recurse -Force
+
+          # RED4ext plugin DLL.
+          $pluginDll = "build/src/Release/InfiniteRandomizerFrameworkNative.dll"
+          if (-not (Test-Path $pluginDll)) {
+            throw "Expected build output not found: $pluginDll"
+          }
+
+          $pluginDir = Join-Path $stage "red4ext/plugins/InfiniteRandomizerFramework"
+          New-Item -ItemType Directory -Force -Path $pluginDir | Out-Null
+          Copy-Item -Path $pluginDll -Destination $pluginDir -Force
+
+      - name: Create zip archive
+        shell: pwsh
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          $zip = "InfiniteRandomizerFramework-$env:TAG.zip"
+          if (Test-Path $zip) { Remove-Item -Force $zip }
+          Compress-Archive -Path "stage/*" -DestinationPath $zip -Force
+          Write-Host "Created $zip"
+          Get-ChildItem -Recurse stage | Select-Object FullName
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: InfiniteRandomizerFramework-${{ inputs.tag }}
+          path: InfiniteRandomizerFramework-${{ inputs.tag }}.zip
+          if-no-files-found: error
+
+      - name: Create draft release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          $zip = "InfiniteRandomizerFramework-$env:TAG.zip"
+
+          gh release view $env:TAG --json tagName 2>$null | Out-Null
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "Release $env:TAG already exists, updating it."
+            gh release upload $env:TAG $zip --clobber
+            gh release edit $env:TAG --draft --title $env:TAG
+          }
+          else {
+            gh release create $env:TAG $zip `
+              --draft `
+              --target $env:GITHUB_SHA `
+              --title $env:TAG `
+              --notes "Draft release for $env:TAG."
+          }

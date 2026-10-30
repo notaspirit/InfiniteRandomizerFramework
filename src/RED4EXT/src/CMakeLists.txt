@@ -19,13 +19,18 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${PROJECT_HEADER_FILES} ${PROJECT_S
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE RED4ext::SDK)
 
-set(DEST_DIR "E:/Games/Cyberpunk 2077/red4ext/plugins/InfiniteRandomizerFramework")
+option(IRF_COPY_TO_GAME "Copy the built plugin to the local game installation" ON)
 
-add_custom_command(
-        TARGET ${CMAKE_PROJECT_NAME}
-        POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E make_directory "${DEST_DIR}"
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "$<TARGET_FILE:${CMAKE_PROJECT_NAME}>"
-        "${DEST_DIR}"
-)
+if (IRF_COPY_TO_GAME)
+    set(DEST_DIR "E:/Games/Cyberpunk 2077/red4ext/plugins/InfiniteRandomizerFramework"
+            CACHE PATH "Directory the built plugin is copied to")
+
+    add_custom_command(
+            TARGET ${CMAKE_PROJECT_NAME}
+            POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E make_directory "${DEST_DIR}"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "$<TARGET_FILE:${CMAKE_PROJECT_NAME}>"
+            "${DEST_DIR}"
+    )
+endif ()
