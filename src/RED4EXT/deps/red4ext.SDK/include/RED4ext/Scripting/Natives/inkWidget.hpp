@@ -2,7 +2,7 @@
 
 #include <RED4ext/CName.hpp>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/DynArray.hpp>
+#include <RED4ext/Containers/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/Scripting/IScriptable.hpp>
 #include <RED4ext/Scripting/Natives/Generated/HDRColor.hpp>
@@ -57,6 +57,11 @@ struct Widget : IScriptable
     bool isInteractive;                                           // 1FB
     bool affectsLayoutWhenHidden;                                 // 1FC
     uint8_t flags;                                                // 1FD
+    uint8_t unk1FE[0x210 - 0x1FE];                                // 1FE
 };
-RED4EXT_ASSERT_SIZE(Widget, 0x200);
+RED4EXT_ASSERT_SIZE(Widget, 0x210);
+RED4EXT_ASSERT_OFFSET(Widget, tintColor, 0x1E0);
+RED4EXT_ASSERT_OFFSET(Widget, opacity, 0x1F0);
+RED4EXT_ASSERT_OFFSET(Widget, visible, 0x1F8);
+RED4EXT_ASSERT_OFFSET(Widget, flags, 0x1FD);
 } // namespace RED4ext::ink

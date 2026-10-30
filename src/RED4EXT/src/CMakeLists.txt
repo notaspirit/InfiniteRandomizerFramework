@@ -2,7 +2,6 @@ add_library(${CMAKE_PROJECT_NAME} SHARED ""
         DataStructs/Globals.h
         InfiniteRandomizerFrameworkNativeStateManager.cpp
         InfiniteRandomizerFrameworkNative.h
-        DataStructs/StreamingSectorNodeBuffer.h
         DataStructs/Replacements.h
         RedLogger.cpp
         RedLogger.h

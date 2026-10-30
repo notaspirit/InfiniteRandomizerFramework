@@ -4,7 +4,7 @@
 
 #include <RED4ext/CString.hpp>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/DynArray.hpp>
+#include <RED4ext/Containers/DynArray.hpp>
 #include <RED4ext/ResourcePath.hpp>
 
 namespace RED4ext
@@ -25,7 +25,7 @@ enum class ArchiveScope : uint32_t
     Content = 1, // archive\pc\content
     DLC = 2,     // archive\pc\dlc
     Patch = 3,   // archive\pc\patch
-    Mod = 4,     // archive\pc\mod + mods\*\archives
+    Mod = 6,     // archive\pc\mod + mods\*\archives
 };
 
 struct ArchiveGroup

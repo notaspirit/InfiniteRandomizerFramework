@@ -14,7 +14,9 @@
 #include "RED4ext/Scripting/Natives/Generated/world/TerrainMeshNode.hpp"
 #include "RED4ext/Scripting/Utils.hpp"
 #include "RedLib.hpp"
-#include "RedLogger.h"
+#include "RED4ext/Scripting/Natives/worldCookedBendedMeshNode.hpp"
+#include "RED4ext/Scripting/Natives/worldCookedStaticDecalNode.hpp"
+#include "RED4ext/Scripting/Natives/Generated/world/CookedGenericProxyMeshNode.hpp"
 
 namespace InfiniteRandomizerFramework {
 
@@ -63,7 +65,7 @@ void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *a
         return;
     }
 
-    for (auto& nodes = GetNodes(sector); const auto& node : nodes)
+    for (const auto& node : sector->compiled.nodes)
     {
         if (node->GetNativeType()->IsA(m_rttis->GetType("worldMeshNode")))
         {
@@ -80,13 +82,54 @@ void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *a
         else if (node->GetNativeType()->IsA(m_rttis->GetType("worldInstancedMeshNode"))) {
             const auto instancedMeshNode = Red::Cast<RED4ext::worldInstancedMeshNode>(node);
 
-            if (!m_replacements.contains(instancedMeshNode->mesh.path)) {
-                continue;
-            }
+            for (auto& innerNode : instancedMeshNode->cookedInstances)
+            {
+                if (!m_replacements.contains(innerNode.mesh.path)) {
+                    continue;
+                }
 
-            auto replacementValues = GetRandomEntry(instancedMeshNode->mesh.path, instancedMeshNode->meshAppearance);
-            instancedMeshNode->mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementValues._Myfirst._Val);
-            instancedMeshNode->meshAppearance = replacementValues._Get_rest()._Myfirst._Val;
+                auto replacementValues = GetRandomEntry(innerNode.mesh.path, innerNode.meshAppearance);
+                innerNode.mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementValues._Myfirst._Val);
+                innerNode.meshAppearance = replacementValues._Get_rest()._Myfirst._Val;
+            }
+        }
+        else if (node->GetNativeType()->IsA(m_rttis->GetType("worldCookedBendedMeshNode"))) {
+            const auto cookedBendedMeshNode = Red::Cast<RED4ext::worldCookedBendedMeshNode>(node);
+
+            for (auto& innerNode : cookedBendedMeshNode->innerNodes) {
+                if (!m_replacements.contains(innerNode.mesh.path)) {
+                    continue;
+                }
+
+                auto replacementValues = GetRandomEntry(innerNode.mesh.path, innerNode.meshAppearance);
+                innerNode.mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementValues._Myfirst._Val);
+                innerNode.meshAppearance = replacementValues._Get_rest()._Myfirst._Val;
+            }
+        }
+        else if (node->GetNativeType()->IsA(m_rttis->GetType("worldCookedMeshNode"))) {
+            const auto cookedMeshNode = Red::Cast<RED4ext::worldCookedMeshNode>(node);
+
+            for (auto& innerNode : cookedMeshNode->innerNodes) {
+                if (!m_replacements.contains(innerNode.mesh.path)) {
+                    continue;
+                }
+
+                auto replacementValues = GetRandomEntry(innerNode.mesh.path, innerNode.meshAppearance);
+                innerNode.mesh = RED4ext::RaRef<RED4ext::CMesh>(replacementValues._Myfirst._Val);
+                innerNode.meshAppearance = replacementValues._Get_rest()._Myfirst._Val;
+            }
+        }
+        else if (node->GetNativeType()->IsA(m_rttis->GetType("worldCookedStaticDecalNode"))) {
+            const auto cookedStaticDecalNode = Red::Cast<RED4ext::worldCookedStaticDecalNode>(node);
+
+            for (auto& innerNode : cookedStaticDecalNode->innerNodes) {
+                if (!m_replacements.contains(innerNode.material.path)) {
+                    continue;
+                }
+
+                auto replacementValues = GetRandomEntry(innerNode.material.path, g_anyAppearance);
+                innerNode.material = RED4ext::RaRef<RED4ext::IMaterial>(replacementValues._Myfirst._Val);
+            }
         }
         else if (node->GetNativeType()->IsA(m_rttis->GetType("worldBendedMeshNode"))) {
             const auto bendedMeshNode = Red::Cast<RED4ext::worldBendedMeshNode>(node);

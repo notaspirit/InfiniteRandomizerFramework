@@ -28,12 +28,17 @@ struct RawBuffer
     RawBuffer();
     RawBuffer(void* aData, uint32_t aSize, uint32_t aAlignment = 8);
     RawBuffer(const RawBuffer&) = delete;
-    RawBuffer(RawBuffer&&) = default;
+    RawBuffer(RawBuffer&& aOther);
     ~RawBuffer();
+
+    RawBuffer& operator=(const RawBuffer& aRhs) = delete;
+    RawBuffer& operator=(RawBuffer&& aRhs);
 
     Memory::IAllocator* GetAllocator() const;
     void Initialize(Memory::IAllocator* aAllocator, uint32_t aSize, uint32_t aAlignment = 8);
     void Resize(uint32_t aSize);
+    void Clear();
+    void Swap(RawBuffer& aOther);
 
     operator bool() const noexcept;
 
@@ -50,6 +55,72 @@ struct DataBuffer
     uint64_t unk20;   // 20 - Pointer to something
 };
 RED4EXT_ASSERT_SIZE(DataBuffer, 0x28);
+
+template<typename T>
+struct TDataBuffer : DataBuffer
+{
+    T& operator*()
+    {
+        return Front();
+    }
+
+    T& operator->()
+    {
+        return Front();
+    }
+
+    T& operator[](uint32_t aIndex)
+    {
+        return At(aIndex);
+    }
+
+    [[nodiscard]] T& At(uint32_t aIndex) const
+    {
+        return *(reinterpret_cast<T*>(buffer.data) + aIndex);
+    }
+
+    [[nodiscard]] uint32_t Size() const
+    {
+        return buffer.size / sizeof(T);
+    }
+
+    [[nodiscard]] bool IsEmpty() const
+    {
+        return buffer.size == 0;
+    }
+
+    [[nodiscard]] T* Begin() const
+    {
+        return reinterpret_cast<T*>(buffer.data);
+    }
+
+    [[nodiscard]] T* End() const
+    {
+        return reinterpret_cast<T*>(reinterpret_cast<uintptr_t>(buffer.data) + buffer.size);
+    }
+
+    [[nodiscard]] T& Front() const
+    {
+        return At(0);
+    }
+
+    [[nodiscard]] T& Back() const
+    {
+        return At(Size() - 1);
+    }
+
+#pragma region STL
+    [[nodiscard]] inline T* begin() const
+    {
+        return Begin();
+    }
+
+    [[nodiscard]] inline T* end() const
+    {
+        return End();
+    }
+#pragma endregion
+};
 
 struct SharedDataBuffer
 {

@@ -2,10 +2,10 @@
 
 #include <RED4ext/CName.hpp>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/DynArray.hpp>
+#include <RED4ext/Containers/DynArray.hpp>
 #include <RED4ext/Handle.hpp>
 #include <RED4ext/NativeTypes.hpp>
-#include <RED4ext/RenderResource.hpp>
+#include <RED4ext/Rendering/RenderResource.hpp>
 #include <RED4ext/Scripting/Natives/Generated/Box.hpp>
 #include <RED4ext/Scripting/Natives/Generated/CMeshMaterialEntry.hpp>
 #include <RED4ext/Scripting/Natives/Generated/ERenderObjectType.hpp>
@@ -62,7 +62,11 @@ struct __declspec(align(0x10)) CMesh : res::StreamedResource
     bool isPlayerShadowMesh;                                    // 20B
     uint8_t unk20C[0x219 - 0x20C];                              // 20C
     ERenderObjectType objectType;                               // 219
-    uint8_t unk21A[0x230 - 0x21A];                              // 21A
+    uint8_t unk21A[0x220 - 0x21A];                              // 21A
 };
-RED4EXT_ASSERT_SIZE(CMesh, 0x230);
+RED4EXT_ASSERT_SIZE(CMesh, 0x220);
+RED4EXT_ASSERT_OFFSET(CMesh, appearances, 0x1E0);
+RED4EXT_ASSERT_OFFSET(CMesh, renderResource, 0x1F0);
+RED4EXT_ASSERT_OFFSET(CMesh, renderResourceBlob, 0x1F8);
+RED4EXT_ASSERT_OFFSET(CMesh, objectType, 0x219);
 } // namespace RED4ext
