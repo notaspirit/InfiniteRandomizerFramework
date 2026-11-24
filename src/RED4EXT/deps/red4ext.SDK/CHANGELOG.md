@@ -19,6 +19,11 @@ and this project adheres to
 - Add template utilities on `Variant` to set/get primitive types (#219).
 - Add support for game version 2.5 (`RED4EXT_V1_RUNTIME_VERSION_2_50`).
 - Add `CStackFrame` destructor and the frame call map fields introduced in 2.5.
+- Add `BufferView`, `BufferIterator` and `TDataBuffer` for reading data buffers (#234).
+- Add decoded `worldStreamingSector`, `worldCompiledSector`, `worldCompiledNodeInstanceSetupInfoBuffer`,
+  `worldCollisionNode`, `worldInstancedMeshNode` and `worldCooked*Node`s (#234).
+- Add `ResourceBank`, a TTL based resource cache (#238).
+- Add `ResourceLoader::bank` property for accessing the loader's `ResourceBank` (#238).
 
 ### Changed
 
@@ -35,14 +40,20 @@ and this project adheres to
 - Rename `CBaseRTTIType` to `rtti::IType` (#193).
 - Move `ERTTIType` and `rtti::IType` into respective files in `RED4ext/rtti/` (#193).
 - Move render types (`IRenderProxy`, `IRenderResource`, etc.) into respective files in `RED4ext/Rendering/` (#194).
+- Rename `ResourceRequest::unk17` property to `updateCache` (#238).
+- Update decoded functions of `gameITransactionSystem` (#238).
 
 ### Removed
 
 - Remove `ScriptInstance` alias, use `void*` instead (#193).
 - Remove implicit boolean conversion for `Span`, use `Span::IsEmpty()` instead.
+- Remove `ResourceRequest` constructor in favor of aggregate initialization (#238).
 
 ### Fixed
 
+- Fix `DynArray` to construct elements in raw memory during realloc, shift and
+  insert, instead of assigning into uninitialized slots (#233).
+- Fix swapped `RBegin`/`REnd` on `DynArray`, `Span` and `StaticArray` (#233).
 - Fix `CurveData` values alignment in the buffer (#216).
 - Fix `CurveData` buffer initialization (#217, #218).
 - Fix `CClass::ToString` address hash (#216).
@@ -50,6 +61,8 @@ and this project adheres to
 - Fix `RawBuffer` move construction and move assignment (#218).
 - Fix address hashes for 2.5: `UpdateRegistrar::RegisterUpdate`, `DeferredDataBuffer::LoadCopyAsync`,
   `ISerializable::sub_C0` and `ResourceToken` I/O context destruction.
+- Fix `CClass::sub_98` address hash and pass its missing `a5` argument (#235).
+- Fix `ISerializable` destructor not removing the object from the global registry (#238).
 
 ## [1.0.0] - 2026-03-09
 

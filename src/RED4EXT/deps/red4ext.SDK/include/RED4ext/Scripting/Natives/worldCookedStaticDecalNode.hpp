@@ -7,7 +7,7 @@
 #include <RED4ext/Scripting/Natives/Generated/HDRColor.hpp>
 #include <RED4ext/Scripting/Natives/Generated/RenderDecalNormalsBlendingMode.hpp>
 #include <RED4ext/Scripting/Natives/Generated/world/CookedNode.hpp>
-#include <RED4ext/Views/DynArrayView.hpp>
+#include <RED4ext/Views/BufferView.hpp>
 
 namespace RED4ext
 {
@@ -39,13 +39,19 @@ struct CookedStaticDecalNode : CookedNode
     static constexpr const char* NAME = "worldCookedStaticDecalNode";
     static constexpr const char* ALIAS = NAME;
 
+    BufferView<CookedStaticDecalInnerNode> GetInnerNodes()
+    {
+        return {cookedData.Data(), cookedData.Size(), cookedElementSize};
+    }
+
     uint8_t unk38[0x40 - 0x38];            // 38
-    DynArray<CookedStaticDecalInnerNode> innerNodes;          // 40
-    uint8_t unk50[0x58 - 0x50];            // 48
+    DynArray<uint8_t> cookedData;          // 40
+    uint32_t cookedElementSize;            // 50
+    uint8_t unk54[0x58 - 0x54];            // 54
     DynArray<HDRColor> diffuseColorScales; // 58
 };
 RED4EXT_ASSERT_SIZE(CookedStaticDecalNode, 0x68);
-RED4EXT_ASSERT_OFFSET(CookedStaticDecalNode, innerNodes, 0x40);
+RED4EXT_ASSERT_OFFSET(CookedStaticDecalNode, cookedData, 0x40);
 RED4EXT_ASSERT_OFFSET(CookedStaticDecalNode, diffuseColorScales, 0x58);
 } // namespace world
 using worldCookedStaticDecalNode = world::CookedStaticDecalNode;

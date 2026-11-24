@@ -19,6 +19,11 @@ struct CookedGenericProxyMeshNode : CookedPrefabProxyMeshNode
 {
     static constexpr const char* NAME = "worldCookedGenericProxyMeshNode";
     static constexpr const char* ALIAS = NAME;
+
+    BufferView<CookedGenericProxyMeshInnerNode> GetInnerNodes()
+    {
+        return {cookedData.Data(), cookedData.Size(), cookedElementSize};
+    }
 };
 RED4EXT_ASSERT_SIZE(CookedGenericProxyMeshNode, 0x58);
 } // namespace world
