@@ -95,7 +95,9 @@ void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *a
         else if (node->GetNativeType()->IsA(m_rttis->GetType("worldCookedBendedMeshNode"))) {
             const auto cookedBendedMeshNode = Red::Cast<RED4ext::worldCookedBendedMeshNode>(node);
 
-            for (auto& innerNode : cookedBendedMeshNode->innerNodes) {
+            const auto innerNodes = cookedBendedMeshNode->GetInnerNodes();
+            for (int i = 0; i < innerNodes.Size(); i++) {
+                auto& innerNode = innerNodes.At(i);
                 if (!m_replacements.contains(innerNode.mesh.path)) {
                     continue;
                 }
@@ -108,7 +110,9 @@ void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *a
         else if (node->GetNativeType()->IsA(m_rttis->GetType("worldCookedMeshNode"))) {
             const auto cookedMeshNode = Red::Cast<RED4ext::worldCookedMeshNode>(node);
 
-            for (auto& innerNode : cookedMeshNode->innerNodes) {
+            const auto innerNodes = cookedMeshNode->GetInnerNodes();
+            for (int i = 0; i < innerNodes.Size(); i++) {
+                auto& innerNode = innerNodes.At(i);
                 if (!m_replacements.contains(innerNode.mesh.path)) {
                     continue;
                 }
@@ -121,7 +125,9 @@ void InfiniteRandomizerFrameworkNative::OnSectorPostLoad(RED4ext::IScriptable *a
         else if (node->GetNativeType()->IsA(m_rttis->GetType("worldCookedStaticDecalNode"))) {
             const auto cookedStaticDecalNode = Red::Cast<RED4ext::worldCookedStaticDecalNode>(node);
 
-            for (auto& innerNode : cookedStaticDecalNode->innerNodes) {
+            const auto innerNodes = cookedStaticDecalNode->GetInnerNodes();
+            for (int i = 0; i < innerNodes.Size(); i++) {
+                auto& innerNode = innerNodes.At(i);
                 if (!m_replacements.contains(innerNode.material.path)) {
                     continue;
                 }
